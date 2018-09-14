@@ -1,7 +1,6 @@
 {
   "name": "kd_project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "directories": {
     "doc": "doc"
@@ -24,5 +23,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "zhangjiaxiang",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jxiang-jc/kd_porject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jxiang-jc/kd_porject/issues"
+  },
+  "homepage": "https://github.com/Jxiang-jc/kd_porject#readme",
+  "description": ""
 }
