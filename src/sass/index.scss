@@ -1,4 +1,116 @@
-h1{
-    color:red;
-    
+//引入变量文件
+@import 'var';
+
+#pageHeader{
+    // padding:0;
+    .header_t{
+        height:45px;
+        background-color: #585858;
+    }
+    .header_b{
+        height:95px;
+        background-color: #58bc58;
+    }
 }
+
+/*nav*/
+#pageNav{
+    div{
+        height:40px;
+        background-color:#F54343;
+    }
+
+}
+
+/*main*/
+#pageMain{
+    .carousel{
+        height: 467px;
+        background-color:gold;
+    }
+    .limitBuy{
+        height:303px;
+        background-color:hotpink;
+        margin-top:20px;
+    }
+    .channel{
+        height:122px;
+        background-color:salmon;
+        margin-top:20px;
+    }
+    .floor_1st{
+        .fl_1st_t{
+            height:$heightT;
+            background-color:seagreen;
+        }
+        .fl_1st_b{
+            height:$heightB;
+            background-color:royalblue;
+        }
+    }
+    .floor_2nd{
+        .fl_2nd_t{
+            height:$heightT;
+            background-color:seagreen;
+        }
+        .fl_2nd_b{
+            height:$heightB;
+            background-color:royalblue;
+        }
+    }
+    .floor_3rd{
+        .fl_3rd_t{
+            height:$heightT;
+            background-color:seagreen;
+        }
+        .fl_3rd_b{
+            height:$heightB;
+            background-color:royalblue;
+        }
+    }
+    .floor_4th{
+        .fl_4th_t{
+            height:$heightT;
+            background-color:seagreen;
+        }
+        .fl_4th_b{
+            height:$heightB;
+            background-color:royalblue;
+        }
+    }
+
+    .floor_5th{
+        .fl_5th_t{
+            height:$heightT;
+            background-color:seagreen;
+        }
+        .fl_5th_b{
+            height:172px;
+            background-color:grey;
+        }
+    }
+    .link{
+        height:170px;
+        background-color:plum;
+        margin-top:20px;
+    }
+
+    .longImg{
+        height:90px;
+        margin-top:20px;
+    }
+}
+
+/*footer*/
+#pageFooter{
+    .footer_t{
+        height:192px;
+        margin-top:20px;
+        background-color:#F03B43;
+    }
+    .footer_b{
+        height:130px;
+        background-color:goldenrod;
+    }
+}
+
