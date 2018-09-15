@@ -198,10 +198,8 @@ th {
     -webkit-box-shadow: none !important;
             box-shadow: none !important;
   }
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
+
+
   a[href]:after {
     content: " (" attr(href) ")";
   }
@@ -1103,7 +1101,7 @@ a {
 a:hover,
 a:focus {
   color: #23527c;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -1597,9 +1595,9 @@ pre code {
     width: 970px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .container {
-    width: 1170px;
+    width: 1210px;
   }
 }
 .container-fluid {
@@ -2090,7 +2088,7 @@ pre code {
     margin-left: 0;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
   }
@@ -3421,7 +3419,7 @@ fieldset[disabled] .btn-link {
 .btn-link:hover,
 .btn-link:focus {
   color: #23527c;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   background-color: transparent;
 }
 .btn-link[disabled]:hover,
@@ -3561,7 +3559,7 @@ tbody.collapse.in {
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   color: #262626;
-  text-decoration: none;
+  /* text-decoration: none; */
   background-color: #f5f5f5;
 }
 .dropdown-menu > .active > a,

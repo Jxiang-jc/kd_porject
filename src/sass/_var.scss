@@ -5,6 +5,23 @@ $heightT:53px;
 
 $heightB:477px;
 
-.container{
-    padding:0;
+$fontSize:14px;
+
+$fontFamily:12px/150% Arial,Verdana,"宋体";
+
+$mainColor:#666666;
+
+$hoverColor:#f03b43;
+
+$priceColor:#f03b44;
+
+//手型点击
+%cus{
+    cursor:pointer;
+}
+a{
+    color:$mainColor;
+}
+a:hover{
+    text-decoration: none;color:#f03b43;
 }
