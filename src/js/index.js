@@ -1,7 +1,7 @@
 //引入模块化文件
 require(['config'], function () {
     console.log(66)
-    require(['jquery'], function ($) {
+    require(['jquery','common','jxcarousel'], function ($) {
         //头部二级导航
         $('.mykdl').hover(() => {
             $('.mykdl ul').removeClass('hide').addClass('shows')
@@ -28,7 +28,7 @@ require(['config'], function () {
             //初始化
             init() {
                 this.ele = $(this.ele);
-                let $h3 = this.ele.find('h3');
+                let $h3 = this.ele.find('h3'); 
                 
                 $h3.on('click', function () {
                     if($('.more').is(':visible')){
@@ -61,6 +61,18 @@ require(['config'], function () {
         }
         downList.init();
 
+        //轮播图使用
+
+        $('.carousel').jxcarousel({
+            ele:'.banner_l',
+            width:670,
+            height:450,
+            num:false,
+            index:0,
+            page:true,
+            imgs:["../images/indexImg/banner/banner(1).jpg","../images/indexImg/banner/banner(2).jpg","../images/indexImg/banner/banner(3).jpg","../images/indexImg/banner/banner(4).jpg","../images/indexImg/banner/banner(5).jpg","../images/indexImg/banner/banner(6).jpg"],
+            duration:4000
+        })
     })
 }); 
 

@@ -1,0 +1,83 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lx-carousel img {
+    display: block;
+}
+
+.lx-carousel {
+    position: relative;
+    width: 810px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.lx-carousel ul {
+    position: absolute;
+    overflow: hidden;
+}
+
+/*水平移动*/
+.lx-carousel ul.horizontal li {
+    float: left;
+}
+
+/*淡入淡出*/
+.lx-carousel ul.fade li {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.lx-carousel .page {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+}
+
+
+
+.lx-carousel .page span {
+    display: inline-block;
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, .6);
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.lx-carousel .page span.active {
+    background-color: rgba(255, 0, 0, .8);
+}
+
+.lx-carousel>span {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 50px 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.lx-carousel .btn-next {
+    left: auto;
+    right: 0;
+}
+
+.lx-carousel>span:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.lx-carousel:hover>span {
+    display: block;
+}
