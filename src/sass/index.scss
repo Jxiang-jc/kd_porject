@@ -485,9 +485,10 @@
                 position:relative;
                 color:#555;border:1px solid #f2f2f2;
                 background: #fff;height:253px;
+                
                 >div{
                     >ul{
-                        height:240px;
+                        height:240px;z-index:-1;
                         >li{
                             height: 240px; width: 213px;
                             border-left: 1px solid #f2f2f2;
@@ -692,48 +693,102 @@
                     }
                 }
             }
-        }
-        
-
+    }
     
-    .floor_1st{
-        .fl_1st_t{
+    .floor_1st,.floor_2nd,.floor_3rd,.floor_4th{
+        .fl_1st_t,.fl_2nd_t,.fl_3rd_t,.fl_4th_t{
             height:$heightT;
-            background-color:seagreen;
+            line-height:$heightT;
+            font-size: 24px;
+            color:#869CFE;
+            margin-top:10px;
+            font-family: 'Microsoft yahei';
         }
-        .fl_1st_b{
+        .fl_1st_b,.fl_2nd_b,.fl_3rd_b,.fl_4th_b{
             height:$heightB;
-            background-color:royalblue;
+            border-top: 2px solid #869cfe;
+            .floor_1st_l,.floor_2nd_l,.floor_3rd_l,.floor_4th_l{
+                background: #b8cbfe;
+                width: 210px;height:$heightB;
+                float: left;
+                .f1_lb,.f2_lb,.f3_lb,.f4_lb{
+                    height: 220px;
+                    margin: 9px auto auto 9px;
+                    overflow: hidden;
+                    a{
+                        width: 90px;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
+                        margin: 4px auto auto 4px;
+                        float: left;
+                        background: #fff;
+                        overflow: hidden;
+                    }
+                }
+            }
+            .floor_1st_r,.floor_2nd_r,.floor_3rd_r,.floor_4th_r{float:right;width: 1000px;
+                li{
+                    width: 199px;height: 236.5px;
+                    float: left;
+                    border-right: 1px solid #ededed;
+                    border-bottom: 1px solid #ededed;
+                    .manImgBox{
+                        overflow: hidden;text-align: center;
+                        margin: 0 auto;
+                        padding: 27px 0px 15px 0px;
+                        }
+                    .manContentBox{
+                        height: 50px;margin: 0px 20px;
+                        overflow: hidden;
+                        .manName{
+                            height: 25px;line-height: 25px;
+                            overflow: hidden;
+                        }
+                        .manPrice{
+                            height: 20px;
+                            line-height: 20px;
+                            font-family: 'Microsoft yahei';
+                            color: #f03b44;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
         }
     }
+    
     .floor_2nd{
         .fl_2nd_t{
-            height:$heightT;
-            background-color:seagreen;
+            color:#3DC190;
         }
         .fl_2nd_b{
-            height:$heightB;
-            background-color:royalblue;
+            border-top: 2px solid #3DC190;
+            .floor_2st_l{
+                background: #b8cbfe;
+            }
         }
     }
     .floor_3rd{
         .fl_3rd_t{
-            height:$heightT;
-            background-color:seagreen;
+            color:#FC9359;
         }
         .fl_3rd_b{
-            height:$heightB;
-            background-color:royalblue;
+            border-top:2px solid #FC9359;
+            .floor_3rd_l{
+                background:#ffccab;
+            }
         }
     }
     .floor_4th{
         .fl_4th_t{
-            height:$heightT;
-            background-color:seagreen;
+            color:#73A9EA;
         }
         .fl_4th_b{
-            height:$heightB;
-            background-color:royalblue;
+            border-top:2px solid #73A9EA;
+            .floor_4th_l{
+                background:#d7eaff;
+            }
         }
     }
 

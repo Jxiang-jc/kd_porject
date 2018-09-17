@@ -59,7 +59,7 @@
                     return `<li>
                     <h3>${item.name}</h3>
                     <a href="#"><img src = "${item.imgurl}"></a>
-                    <span class="z_price1">${item.price}</span><span class="z_del"><del>${item.delPrice}</del></span>
+                    <span class="z_price1">￥${item.price}</span><span class="z_del"><del>${item.delPrice}</del></span>
                     </li>` 
                 }).join('')
             }
