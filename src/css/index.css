@@ -1,5 +1,5 @@
 @charset "UTF-8";
-#pageHeader .container .header_t .header_tr li:nth-child(1) ul li:hover, #header_b .container .header_bc, #pageNav .tab1 .tab2 > li section.tab3 .downList h3, #pageMain .carousel .banner_l .page span, #pageMain .limitBuy .lb_l .changeTab ul li { cursor: pointer; }
+#pageHeader .container .header_t .header_tr li:nth-child(1) ul li:hover, #header_b .container .header_bc, #pageNav .tab1 .tab2 > li section.tab3 .downList h3, #pageMain .carousel .banner_l .page span, #pageMain .limitBuy .lb_l .changeTab > div > ul > li, #pageMain .limitBuy .lb_r .limitBox .page span { cursor: pointer; }
 
 a { color: #666666; }
 
@@ -207,25 +207,57 @@ a:hover { text-decoration: none; color: #f03b43; }
 
 #pageMain .limitBuy .lb_l { height: 303px; width: 860px; float: left; margin-left: 10px; }
 
-#pageMain .limitBuy .lb_l .activeTab { line-height: 50px; height: 50px; background: wheat; font-size: 16px; }
+#pageMain .limitBuy .lb_l .activeTab { line-height: 50px; height: 50px; font-size: 16px; }
 
 #pageMain .limitBuy .lb_l .activeTab li { width: 100px; cursor: pointer; display: block; float: left; color: #000; text-align: center; }
 
 #pageMain .limitBuy .lb_l .activeTab li:hover { color: #f54343; }
 
-#pageMain .limitBuy .lb_l .changeTab { color: #555; border: 1px solid #f2f2f2; background: #fff; height: 253px; overflow: hidden; }
+#pageMain .limitBuy .lb_l .activeTab .tjTab { background: #eb6161; color: #fff; }
 
-#pageMain .limitBuy .lb_l .changeTab ul li { height: 240px; width: 213px; border-left: 1px solid #f2f2f2; float: left; }
+#pageMain .limitBuy .lb_l .changeTab { position: relative; color: #555; border: 1px solid #f2f2f2; background: #fff; height: 253px; }
 
-#pageMain .limitBuy .lb_l .changeTab ul li a { display: block; text-align: center; width: 140px; height: 150px; padding-top: 5px; text-align: center; margin: 15px auto 5px auto; }
+#pageMain .limitBuy .lb_l .changeTab > div > ul { height: 240px; }
 
-#pageMain .limitBuy .lb_l .changeTab ul li p { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 155px; font-size: 13px; height: 22px; line-height: 22px; margin: 0 auto; }
+#pageMain .limitBuy .lb_l .changeTab > div > ul > li { height: 240px; width: 213px; border-left: 1px solid #f2f2f2; float: left; }
 
-#pageMain .limitBuy .lb_l .changeTab ul li p:nth-child(3) { color: #f03b44; line-height: 25px; height: 25px; font-size: 15px; font-family: Verdana, 'Microsoft yahei'; }
+#pageMain .limitBuy .lb_l .changeTab > div > ul > li > a { display: block; text-align: center; width: 140px; height: 150px; padding-top: 5px; text-align: center; margin: 15px auto 5px auto; }
 
-#pageMain .limitBuy .lb_l .changeTab ul li:nth-child(1) { border-left: 0; }
+#pageMain .limitBuy .lb_l .changeTab > div > ul > li > p { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 155px; font-size: 13px; height: 22px; line-height: 22px; margin: 0 auto; }
 
-#pageMain .limitBuy .lb_r { height: 303px; width: 310px; float: right; background: pink; }
+#pageMain .limitBuy .lb_l .changeTab > div > ul > li > p:nth-child(3) { color: #f03b44; line-height: 25px; height: 25px; font-size: 15px; font-family: Verdana, 'Microsoft yahei'; }
+
+#pageMain .limitBuy .lb_l .changeTab > div > ul > li:nth-child(1) { border-left: 0; }
+
+#pageMain .limitBuy .lb_l .changeTab > div .secTab > div:nth-child(1) { display: none; position: absolute; top: -35px; right: 0; z-index: 10; overflow: hidden; }
+
+#pageMain .limitBuy .lb_l .changeTab > div .secTab > div:nth-child(1) li { padding: 0px 8px; background: #efefef; color: #666; float: left; margin-left: 5px; }
+
+#pageMain .limitBuy .lb_l .changeTab > div .secTab .secTab2 ul li:nth-child(1) { background: #eb6161; color: #fff; }
+
+#pageMain .limitBuy .lb_l .changeTab > div .active div:nth-child(1) { display: block; }
+
+#pageMain .limitBuy .lb_r { height: 303px; width: 310px; float: right; }
+
+#pageMain .limitBuy .lb_r > h2 { height: 50px; line-height: 50px; text-align: center; background: #ef5752; color: #fff; font-size: 18px !important; letter-spacing: 1px; }
+
+#pageMain .limitBuy .lb_r .limitBox { width: 308px; height: 251px; background: #fff; /*重置轮播样式*/ }
+
+#pageMain .limitBuy .lb_r .limitBox h3 { height: 40px; width: 308px; line-height: 40px; color: #333; text-align: center; overflow: hidden; padding: 0px 20px; font-size: 16px; font-family: 'Microsoft yahei'; }
+
+#pageMain .limitBuy .lb_r .limitBox a { display: block; width: 308px; height: 170px; text-align: center; }
+
+#pageMain .limitBuy .lb_r .limitBox a img { margin: 0 auto; width: 170px; height: 170px; vertical-align: middle; }
+
+#pageMain .limitBuy .lb_r .limitBox .z_price1 { height: 25px; line-height: 25px; font-size: 18px !important; color: #f54343; padding-left: 20px; }
+
+#pageMain .limitBuy .lb_r .limitBox .z_del { height: 25px; line-height: 25px; font-size: 13px; color: #999; padding-left: 10px; }
+
+#pageMain .limitBuy .lb_r .limitBox .page { padding: 0; }
+
+#pageMain .limitBuy .lb_r .limitBox .page span { margin-left: 5px; border-radius: 0; width: 30px; height: 8px; background-color: rgba(255, 0, 0, 0.4); box-shadow: 0 0 3px rgba(255, 0, 0, 0.5); }
+
+#pageMain .limitBuy .lb_r .limitBox .page span.active { background-color: rgba(255, 0, 0, 0.8); }
 
 #pageMain .channel { height: 122px; background-color: salmon; margin-top: 20px; }
 

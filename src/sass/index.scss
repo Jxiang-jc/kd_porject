@@ -468,7 +468,7 @@
             margin-left: 10px;
             
             .activeTab{
-                line-height: 50px;height:50px;background:wheat;
+                line-height: 50px;height:50px;
                 font-size:16px;
                 li{
                     width: 100px;cursor: pointer;
@@ -476,40 +476,72 @@
                     color: #000;text-align:center;
                     &:hover{color:#f54343;}
                 }
+                .tjTab{
+                    background:#eb6161;
+                    color:#fff;
+                }
             }
             .changeTab{
+                position:relative;
                 color:#555;border:1px solid #f2f2f2;
-                background: #fff;height:253px;overflow:hidden;
-                ul{
-                    li{
-                        height: 240px; width: 213px;
-                        border-left: 1px solid #f2f2f2;
-                        float: left;
-                        @extend %cus;
-                        a{
-                            display:block;
-                            text-align:center;
-                            width: 140px;
-                            height: 150px;
-                            padding-top: 5px;
-                            text-align: center;
-                            margin: 15px auto 5px auto;
-                        }
-                        p{
-                            text-overflow:ellipsis;overflow:hidden;white-space:nowrap;width:155px;font-size:13px;height:22px;line-height:22px;margin:0 auto;
-                            &:nth-child(3){
-                                color:$priceColor;
-                                line-height:25px;
-                                height:25px;
-                                font-size:15px;
-                                font-family: Verdana, 'Microsoft yahei';
+                background: #fff;height:253px;
+                >div{
+                    >ul{
+                        height:240px;
+                        >li{
+                            height: 240px; width: 213px;
+                            border-left: 1px solid #f2f2f2;
+                            float: left;
+                            @extend %cus;
+                            >a{
+                                display:block;
+                                text-align:center;
+                                width: 140px;
+                                height: 150px;
+                                padding-top: 5px;
+                                text-align: center;
+                                margin: 15px auto 5px auto;
+                            }
+                            >p{
+                                text-overflow:ellipsis;overflow:hidden;white-space:nowrap;width:155px;font-size:13px;height:22px;line-height:22px;margin:0 auto;
+                                &:nth-child(3){
+                                    color:$priceColor;
+                                    line-height:25px;
+                                    height:25px;
+                                    font-size:15px;
+                                    font-family: Verdana, 'Microsoft yahei';
+                                }
+                            }
+                            &:nth-child(1){
+                                border-left:0;
                             }
                         }
-                        &:nth-child(1){
-                            border-left:0;
+                    }
+                    .secTab{
+                        >div:nth-child(1){
+                            display:none;
+                            position:absolute;
+                            top:-35px;right:0;z-index:10;
+                            overflow:hidden;
+                            li{
+                                padding: 0px 8px;
+                                background: #efefef;
+                                color: #666;
+                                float: left;
+                                margin-left: 5px;
+                            }
+                        }
+                        //给第一个li高亮
+                        .secTab2 ul li:nth-child(1){
+                            background:#eb6161;
+                            color:#fff;
                         }
                     }
+                    .active div:nth-child(1){
+                        display:block;
+                    }
                 }
+
 
             }
         }
@@ -517,7 +549,71 @@
             height:303px;
             width: 310px;
             float: right;
-            background:pink;
+            >h2{
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                background: #ef5752;
+                color: #fff;
+                font-size: 18px !important;
+                letter-spacing: 1px;
+            }
+            .limitBox{
+                width: 308px;
+                height:251px;
+                background:#fff;
+                h3{
+                    height: 40px;
+                    width:308px;
+                    line-height: 40px;
+                    color: #333;
+                    text-align: center;
+                    overflow: hidden;
+                    padding: 0px 20px;
+                    font-size: 16px;
+                    font-family: 'Microsoft yahei';
+                }
+                a{
+                    display:block;
+                    width:308px;height:170px;
+                    text-align:center;
+                    img{
+                        margin:0 auto;
+                        width:170px;height:170px;
+                        vertical-align: middle;
+                    }
+                }
+                .z_price1{
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 18px !important;
+                    color: #f54343;
+                    padding-left:20px;
+                }
+                .z_del{
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 13px;
+                    color: #999;
+                    padding-left: 10px;
+                }
+
+                /*重置轮播样式*/
+                .page {
+                    padding:0;
+                    span{
+                        margin-left:5px;
+                        border-radius:0;
+                        width:30px;height:8px;
+                        background-color: rgba(255, 0, 0, .4);
+                        box-shadow:0 0 3px rgba(255,0,0,.5);
+                        @extend %cus;
+                    }
+                    span.active{
+                        background-color: rgba(255, 0, 0, .8);
+                    }
+                }
+            }
         }
     }
     .channel{

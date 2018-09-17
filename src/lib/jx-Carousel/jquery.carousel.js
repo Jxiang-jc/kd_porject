@@ -2,13 +2,14 @@
 ;(function($){
 
     $.prototype.jxcarousel = function (opt) {
-
+    
         var Carousel = function (options) {
             //属性
             //默认值,如果没有传就用默认的,传了就用
             let defaults = {
                 ele: '',//必传参数,div
                 imgs: [],//必传参数,图片路径
+                imgbox:[],//第二种方式获取li,不仅图片
                 width: 810,
                 height: 320,
                 index: 0,//默认初始索引值
@@ -24,12 +25,13 @@
             this.opt = Object.assign({}, defaults, options);
 
             this.init();
-            console.log(this);//Carousel
+            // console.log(this);//Carousel
         }
 
         //方法
         //初始化
         Carousel.prototype.init = function () {
+
             var opt = this.opt;
             //获取/生成元素
             //绑定事件
@@ -47,9 +49,21 @@
             let ul = document.createElement('ul');
 
             //根据图片路径生成li
-            ul.innerHTML = opt.imgs.map(url => {
-                return `<li><img src = "${url}"></li>`
-            }).join('');
+            if(opt.imgs.length>0){
+                ul.innerHTML = opt.imgs.map(url => {
+                    return `<li><img src = "${url}"></li>`
+                }).join('');
+            }
+            else if(opt.imgbox.length>0){
+                ul.innerHTML = opt.imgbox.map(item=>{
+                    return `<li>
+                    <h3>${item.name}</h3>
+                    <a href="#"><img src = "${item.imgurl}"></a>
+                    <span class="z_price1">${item.price}</span><span class="z_del"><del>${item.delPrice}</del></span>
+                    </li>` 
+                }).join('')
+            }
+            
 
             //把第一张图片复制到最后,无缝关键
             ul.appendChild(ul.children[0].cloneNode(true));
