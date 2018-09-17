@@ -1,5 +1,5 @@
 @charset "UTF-8";
-#pageHeader .container .header_t .header_tr li:nth-child(1) ul li:hover, #header_b .container .header_bc, #pageNav .tab1 .tab2 > li section.tab3 .downList h3, #pageMain .carousel .banner_l .page span, #pageMain .limitBuy .lb_l .changeTab > div > ul > li, #pageMain .limitBuy .lb_r .limitBox .page span { cursor: pointer; }
+#pageHeader .container .header_t .header_tr li:nth-child(1) ul li:hover, #header_b .container .header_bc, #pageNav .tab1 .tab2 > li section.tab3 .downList h3, #pageMain .carousel .banner_l .page span, #pageMain .limitBuy .lb_l .changeTab > div > ul > li, #pageMain .limitBuy .lb_r .limitBox .page span, #pageMain .channel .channelList:last-child p, #pageMain .channel .channelList:last-child dl dd { cursor: pointer; }
 
 a { color: #666666; }
 
@@ -259,7 +259,33 @@ a:hover { text-decoration: none; color: #f03b43; }
 
 #pageMain .limitBuy .lb_r .limitBox .page span.active { background-color: rgba(255, 0, 0, 0.8); }
 
-#pageMain .channel { height: 122px; background-color: salmon; margin-top: 20px; }
+#pageMain .channel { height: 122px; margin-top: 20px; border: 1px solid #ddd; }
+
+#pageMain .channel .channelList { width: 301px; height: 120px; float: left; position: relative; border-left: 1px solid #ddd; }
+
+#pageMain .channel .channelList:first-child { border-left: 0; }
+
+#pageMain .channel .channelList .info { width: 150px; height: 100px; position: absolute; left: 20px; top: 14px; z-index: 1; line-height: 20px; }
+
+#pageMain .channel .channelList .info strong { font-size: 15px; font-family: 'Microsoft yahei'; color: #000; font-weight: 400; height: 20px; }
+
+#pageMain .channel .channelList .info p { height: 36px; color: #999; padding-top: 6px; overflow: hidden; line-height: 16px; font-size: 12px; }
+
+#pageMain .channel .channelList .info p:nth-child(1) { height: 20px; line-height: 20px; padding-top: 0; }
+
+#pageMain .channel .channelList .info a { display: block; padding: 4px 10px; background: #ff4148; color: #fff; margin-top: 10px; }
+
+#pageMain .channel .channelList .unit { float: right; width: 200px; height: 120px; margin-right: 0px; overflow: hidden; text-align: right; z-index: 1; }
+
+#pageMain .channel .channelList .unit img { border: 0; }
+
+#pageMain .channel .channelList:last-child { padding: 15px 20px; }
+
+#pageMain .channel .channelList:last-child p { font-size: 15px; line-height: 20px; font-family: 'Microsoft yahei'; color: #000; font-weight: 400; }
+
+#pageMain .channel .channelList:last-child dl { margin-top: 10px; }
+
+#pageMain .channel .channelList:last-child dl dd { width: 33.3%; height: 20px; line-height: 20px; float: left; overflow: hidden; margin: 3px 0px; }
 
 #pageMain .floor_1st .fl_1st_t { height: 53px; background-color: seagreen; }
 

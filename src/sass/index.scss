@@ -618,9 +618,84 @@
     }
     .channel{
         height:122px;
-        background-color:salmon;
         margin-top:20px;
-    }
+        border:1px solid #ddd;
+        .channelList{
+            width: 301px;height:120px;
+            float: left;position: relative;
+            border-left: 1px solid #ddd;
+            &:first-child{
+                border-left:0;
+            }
+            .info{
+                width: 150px;height: 100px;
+                position: absolute;
+                left: 20px;top: 14px;
+                z-index: 1;
+                line-height: 20px;
+                strong{
+                    font-size: 15px;
+                    font-family: 'Microsoft yahei';
+                    color: #000;
+                    font-weight: 400;
+                    height:20px;
+                }
+                p{
+                    height: 36px;
+                    color: #999;
+                    padding-top: 6px;
+                    overflow: hidden;
+                    line-height: 16px;
+                    font-size:12px;
+                    &:nth-child(1){height:20px;line-height: 20px;padding-top:0;}
+                }
+                a{
+                    display:block;
+                    padding: 4px 10px;
+                    background: #ff4148;
+                    color: #fff;
+                    margin-top:10px;
+                }
+            }
+            .unit{
+                float:right;
+                width: 200px;
+                height:120px;
+                margin-right: 0px;
+                overflow: hidden;
+                text-align: right;
+                z-index: 1;
+                img{border:0;}
+            }
+
+            &:last-child{
+                padding: 15px 20px;
+                    p{
+                        font-size: 15px;
+                        line-height: 20px;
+                        font-family: 'Microsoft yahei';
+                        color: #000;
+                        font-weight: 400;
+                        @extend %cus;
+                    }
+                    dl{
+                        margin-top: 10px;
+                        dd{
+                            width: 33.3%;
+                            height: 20px;
+                            line-height: 20px;
+                            float: left;
+                            overflow: hidden;
+                            margin: 3px 0px;
+                            @extend %cus;
+                        }
+                    }
+                }
+            }
+        }
+        
+
+    
     .floor_1st{
         .fl_1st_t{
             height:$heightT;
