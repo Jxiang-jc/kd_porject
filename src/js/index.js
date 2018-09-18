@@ -206,7 +206,7 @@ require(['config'], function () {
             })
         })
 
-        //link Tab切换
+        //link Tab切换(bootstrap)
         $('#myTab a').mouseover(function (e) {
             e.preventDefault()
             $(this).tab('show')
@@ -214,7 +214,21 @@ require(['config'], function () {
             $(this).css('color','red').parent().siblings().children().css('color','#666');
           })
         
-        
+        //点击回到顶部
+        $('.toTop').on('click',(e)=>{
+            console.log(666)
+            e.preventDefault();
+            let timer = setInterval(()=>{
+                //计算缓冲速度
+                let speed = Math.ceil(window.scrollY/10);
+
+                scrollBy(0,-speed);
+
+                if(window.scrollY === 0){
+                    clearInterval(timer);
+                }
+            },30)
+        })
 
     })
 }); 

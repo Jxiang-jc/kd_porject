@@ -9,7 +9,10 @@ require.config({
         'lxzoom': '../lib/jquery-lxzoom/jquery.lxzoom',
         'jxcarousel': '../lib/jx-Carousel/jquery.carousel',
         'common': 'common',
-        'bootstrapjs':'../lib/bootstrap-3.3.7-dist/js/bootstrap.min'
+        'bootstrapjs':'../lib/bootstrap-3.3.7-dist/js/bootstrap.min',
+        'index':'index',
+        'listPage':'listPage',
+        'custom':'custom'
 
     },
 
@@ -23,6 +26,8 @@ require.config({
         'jxcarousel': ['common'],
         'jxcarousel': ['jquery'],
         'bootstrapjs':['jquery'],
+        'listPage' : ['jquery'],
+        'custom':['jquery'],
 
 
 
