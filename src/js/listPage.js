@@ -8,9 +8,15 @@ require(['config'],function(){
         $('nav').load('../html/commonHtml.html nav .tab1 ',function(){
             $('nav').indexs();
         });
-        $('aside').load('../html/commonHtml.html aside .asideFix');
+        $('aside').load('../html/commonHtml.html aside .asideFix',function(){
+            $('aside').indexs();
+        });
         $('footer').load('../html/commonHtml.html #pageFooter .footer_t,#pageFooter .footer_b');
 
-    
+        //手风琴
+        $('.item').on("click", function () {
+			$(this).next().slideToggle(100);
+			$('.inneritem').not($(this).next()).slideUp('fast');
+		});
     })
 })
