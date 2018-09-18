@@ -1,0 +1,43 @@
+//引入变量文件
+@import 'var';
+
+
+.container{
+    width: 1210px;
+    padding:0;
+    font:$fontFamily;
+}
+
+#pageList{
+    .curmbs{
+        width:100%;height: 30px;line-height: 32px;
+       background: url('../images/indexImg/index_spirit.png') -130px -210px no-repeat #fafafa;
+        border: 1px solid #e0e0e0;border-top: 0px;
+        padding-left: 40px;
+        font-size: 12px;
+        color: #666666;
+        font-family: '宋体';
+        span{
+            padding: 0px 10px;
+            @extend %cus;
+            &:hover{color:#f70;}
+        }
+    }
+    .content{
+        margin-top:10px;
+        .cont_l{
+            width: 210px;
+            float: left;
+            .item{
+                height: 34px;
+                background-color: #F7F7F7;
+                padding: 0 7px 0 10px;
+                border-bottom: 1px solid #dadada;
+                cursor: pointer;
+                font: normal 14px/36px \5fae\8f6f\96c5\9ed1;
+                font-family: '宋体';
+                color: #555555;
+            }
+        }
+    }
+}

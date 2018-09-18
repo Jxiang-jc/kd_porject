@@ -28,8 +28,8 @@ require.config({
         'bootstrapjs':['jquery'],
         'listPage' : ['jquery'],
         'custom':['jquery'],
-
-
+        'custom':['bootstrapjs'],
+        'listPage':['custom']
 
     },
 });

@@ -1,7 +1,9 @@
 require(['config'],function(){
 
-    require(['jquery','custom'],function($){
-        $('#pageHeader').load('../html/commonHtml.html #pageHeader .container');
+    require(['jquery','custom','bootstrapjs'],function($){
+        $('#pageHeader').load('../html/commonHtml.html #pageHeader .container',function(){
+            $('#pageHeader').indexs();
+        });
         $('#header_b').load('../html/commonHtml.html #header_b .container');
         $('nav').load('../html/commonHtml.html nav .tab1 ',function(){
             $('nav').indexs();
