@@ -1,7 +1,7 @@
 //引入模块化文件
 require(['config'], function () {
     // console.log(66)
-    require(['jquery','common','jxcarousel'], function ($) {
+    require(['jquery','common','jxcarousel','bootstrapjs'], function ($) {
         //头部二级导航
         $('.mykdl').hover(() => {
             $('.mykdl ul').removeClass('hide').addClass('shows')
@@ -206,7 +206,13 @@ require(['config'], function () {
             })
         })
 
-
+        //link Tab切换
+        $('#myTab a').mouseover(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+            
+            $(this).css('color','red').parent().siblings().children().css('color','#666');
+          })
         
         
 

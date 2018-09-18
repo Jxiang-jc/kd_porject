@@ -8,7 +8,8 @@ require.config({
         'jquery': '../lib/jquery-3.2.1',
         'lxzoom': '../lib/jquery-lxzoom/jquery.lxzoom',
         'jxcarousel': '../lib/jx-Carousel/jquery.carousel',
-        'common': 'common'
+        'common': 'common',
+        'bootstrapjs':'../lib/bootstrap-3.3.7-dist/js/bootstrap.min'
 
     },
 
@@ -21,6 +22,7 @@ require.config({
         'lxzoom': ['jquery'],
         'jxcarousel': ['common'],
         'jxcarousel': ['jquery'],
+        'bootstrapjs':['jquery'],
 
 
 

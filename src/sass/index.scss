@@ -795,17 +795,48 @@
     .floor_5th{
         .fl_5th_t{
             height:$heightT;
-            background-color:seagreen;
+            line-height:$heightT;
+            font-size: 24px;
+            color:#EF5752;
+            margin-top:10px;
+            font-family: 'Microsoft yahei';
         }
         .fl_5th_b{
             height:172px;
-            background-color:grey;
+            .f5Box{
+                overflow: hidden;
+                border-top: 2px solid #EF5752;
+                padding-top: 10px;
+                >a{
+                    display:block;margin-top:10px;margin-right:10px;
+                    width: 396px;height: 150px;
+                    float: left;
+                    overflow: hidden;
+                    &:last-child{margin-right:0;}
+                }
+            }
         }
     }
     .link{
         height:170px;
-        background-color:plum;
+        // background-color:plum;
         margin-top:20px;
+        .tab-content{
+            padding:15px;
+        }
+        #home{
+            a{
+                padding: 0px 10px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 12px;
+                color: #666666;
+                margin: 5px 0px;
+                width: 100px;
+                display: inline-block;
+            
+            }
+        }
     }
 
     .longImg{
