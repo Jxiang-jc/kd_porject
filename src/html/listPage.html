@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>列表页</title>
     <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/commonCs.css">
     <link rel="stylesheet" href="../css/listPage.css">
@@ -179,7 +180,7 @@
                             </dl>
                         </div>
                         <div class="cont_rList_sum">
-                                共计<span>606</span>件<span>肿瘤</span>品，您可以根据以下条件进行筛选。
+                                <!-- 共计<span>606</span>件<span>肿瘤</span>品，您可以根据以下条件进行筛选。 -->
                         </div>
                         <div class="disease clearfix">
                             <dl>
@@ -228,10 +229,24 @@
                                     <li>最新</li>
                                 </ul>
                             </div>
+                            <div class="filter_r">
+                                <div class="filter_ra"></div>
+                                <div class="filter_rb"></div>
+                                <div class="filter_rc">
+                                    <a href="#" class="filter_rcPrev"><i></i> 上一页</a>
+                                    <a href="#" class="filter_rcNext">下一页<i></i></a>
+                                </div>
+                                <div class="filter_rd">
+                                    到第
+                                    <input type="text" class="page">
+                                    页
+                                    <span>确定</span>
+                                </div>
+                            </div>
                             <div class="filter_r"></div>
                         </div>
                         <div class="productList">
-                            <ul class="clearfix">
+                            <!-- <ul class="clearfix">
                                 <li>
                                     <a href="#" class="picbox"><img src="../images/goodslist/Down.gif" alt=""></a>
                                     <div class="w">
@@ -244,7 +259,35 @@
                                         <a href="#">在线咨询</a>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul> -->
+                        </div>
+                        <div class="filter clearfix">
+                            <div class="filter_r">
+                                <div class="filter_ra"></div>
+                                <div class="filter_rb"></div>
+                                <!-- <div class="filter_rc">
+                                    <a href="#" class="filter_rcPrev"><i></i> 上一页</a>
+                                    <div class="pageNum" >
+                                        <span>1</span>
+                                        <span>2</span>
+                                        <span>3</span>
+                                        <span>4</span>
+                                        <span>5</span>
+                                    </div>
+                                    <a href="#" class="filter_rcNext">下一页<i></i></a>
+                                </div> -->
+                                <div class="filter_rc">
+                                    <div id="pagination1" class="page fl pageNum"></div>
+
+                                </div>
+                                <div class="filter_rd">
+                                    到第
+                                    <input type="text" class="page">
+                                    页
+                                    <span>确定</span>
+                                </div>
+                            </div>
+                            <div class="filter_r"></div>
                         </div>
                     </div>
 

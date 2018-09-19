@@ -6,13 +6,14 @@ require.config({
     //配置短路径
     paths: {
         'jquery': '../lib/jquery-3.2.1',
-        'lxzoom': '../lib/jquery-lxzoom/jquery.lxzoom',
-        'jxcarousel': '../lib/jx-Carousel/jquery.carousel',
-        'common': 'common',
+        'lxzoom': '../lib/jquery-lxzoom/jquery.lxzoom',//laoxie放大镜
+        'jxcarousel': '../lib/jx-Carousel/jquery.carousel',//自己封装轮播图插件
+        'common': 'common',//commonjs
         'bootstrapjs':'../lib/bootstrap-3.3.7-dist/js/bootstrap.min',
-        'index':'index',
+        // 'index':'index',
         'listPage':'listPage',
-        'custom':'custom'
+        'custom':'custom',//首页公共的js
+        'pagination':'../lib/jqueryPagination/jquery.pagination.min',//分页插件
 
     },
 
@@ -27,9 +28,10 @@ require.config({
         'jxcarousel': ['jquery'],
         'bootstrapjs':['jquery'],
         'listPage' : ['jquery'],
+        // 'custom':['bootstrapjs'],
         'custom':['jquery'],
-        'custom':['bootstrapjs'],
-        'listPage':['custom']
+        'listPage':['custom'],
+        'pagination':['jquery']
 
     },
 });
