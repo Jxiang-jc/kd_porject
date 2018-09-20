@@ -123,13 +123,21 @@ a:hover { text-decoration: none; color: #f03b43; }
 
 #pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc { height: 40px; float: left; margin-left: 5px; }
 
-#pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc a { height: 25px; line-height: 25px; display: block; float: left; margin-right: 5px; margin-top: 8px; background: #FFF; }
+#pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc a { height: 25px; line-height: 25px; display: block; float: left; margin-right: 5px; margin-top: 8px; padding-right: 5px; background: #FFF; }
 
 #pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc a i { width: 0; height: 0; line-height: 0; font-size: 0; display: inline-block; border-width: 5px; border-style: dashed solid; border-color: transparent; border-right-color: #CCC; border-left-style: dashed; margin-top: 5px; }
 
-#pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc .filter_rcNext { text-align: right; }
+#pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc a:nth-child(1) { display: none; }
 
-#pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc .filter_rcNext i { display: block; float: right; margin-left: 4px; margin-top: 7px; border-color: transparent; border-left-color: #ccc; }
+#pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc a:hover { background: #f03b43; color: #fff; }
+
+#pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc a:hover i { border-right-color: #fff; }
+
+#pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc .filter_rcNext { text-align: right; padding-left: 5px; }
+
+#pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc .filter_rcNext i { display: block; float: right; margin-left: 2px; margin-right: -5px; margin-top: 7px; border-color: transparent; border-left-color: #ccc; }
+
+#pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc .filter_rcNext:hover i { border-color: transparent; border-left-color: #fff; }
 
 #pageList .content .cont_r .cont_rList .filter .filter_r .filter_rc .ui-pagination-container { height: 34px; line-height: 34px; }
 
@@ -147,7 +155,7 @@ a:hover { text-decoration: none; color: #f03b43; }
 
 #pageList .content .cont_r .cont_rList .filter .filter_r .filter_rd span { width: 40px; height: 23px; line-height: 23px; color: #FFF; background: #f03b43; padding: 4px 8px; border: 0px; margin-left: 4px; }
 
-#pageList .content .cont_r .cont_rList .productList li { display: block; float: left; margin: 10px 8px; height: 338px; position: relative; padding: 10px; }
+#pageList .content .cont_r .cont_rList .productList li { display: block; float: left; margin: 10px 8px; height: 338px; position: relative; padding: 10px; border: 1px solid transparent; width: 230px; }
 
 #pageList .content .cont_r .cont_rList .productList li > a { display: block; width: 210px; height: 210px; text-align: center; }
 
@@ -164,3 +172,5 @@ a:hover { text-decoration: none; color: #f03b43; }
 #pageList .content .cont_r .cont_rList .productList li .proDetail a:nth-child(2) { width: 99px; height: 26px; line-height: 26px; border: 1px solid #dcdcdc; text-align: center; border-radius: 2px; color: #646464; display: block; float: left; background-image: -webkit-linear-gradient(bottom, #f4f4f4, #fbfbfb); }
 
 #pageList .content .cont_r .cont_rList .productList li .proDetail a:nth-child(3) { width: 101px; height: 26px; line-height: 26px; display: block; border-radius: 2px; background: #ff5c4d; text-align: center; float: right; color: #FFF; }
+
+#pageList .content .cont_r .cont_rList .productList .cool { border-color: #dddddd; box-shadow: 0 0 10px #ccc; width: 230px; }

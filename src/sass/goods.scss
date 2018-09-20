@@ -1,0 +1,9 @@
+//引入变量文件
+@import 'var';
+
+
+.container{
+    width: 1210px;
+    padding:0;
+    font:$fontFamily;
+}
