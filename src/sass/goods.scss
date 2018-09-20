@@ -7,3 +7,344 @@
     padding:0;
     font:$fontFamily;
 }
+
+#goods{
+    .crumbs{
+        height: 35px !important;
+        line-height: 35px !important;
+        border: 1px solid #efebeb !important;
+    }
+    .v7_rxcrumb{
+        height: 35px;
+        line-height: 35px;
+        color: #888888;
+        background: #fff;
+        text-indent: 10px;
+    }
+    .goodsImg_t{
+        padding-top: 10px;
+        >div{
+            width: 403px;
+            float: left;
+        }
+    }
+    .goods_cont{
+        background: #fff;
+        zoom: 1;
+        margin-top:20px;
+        border:1px solid #ddd;
+        .goods_cont_l{
+            width: 400px;
+            min-height: 600px;
+            float: left;
+            position: relative;
+            .wr{
+                width: 400px;
+                height:474px;
+                .showbox{
+                    width: 398px;
+                    height: 398px;
+                    position: relative;
+                    left:0;
+                    top:0;
+                    background: #eee;
+                    z-index: 10;border: 1px solid #eeeeee;
+                }
+
+                /* smallImg */
+                .smallImg{position:relative; height:52px; margin-top:1px; background-color:#F1F0F0; padding:6px 5px; width:390px; overflow:hidden;float:left;}
+                .scrollbutton{width:14px; height:50px; overflow:hidden; position:relative; float:left; cursor:pointer; }
+                .scrollbutton.smallImgUp , .scrollbutton.smallImgUp.disabled{background:url(../images/goods/zoom/d_08.png) no-repeat;}
+
+                .scrollbutton.smallImgDown , .scrollbutton.smallImgDown.disabled{background:url(../images/goods/zoom/d_09.png) no-repeat; margin-left:375px; margin-top:-50px;}
+
+                #imageMenu {height:50px; width:360px; overflow:hidden; margin-left:0; float:left;}
+                #imageMenu li {height:50px; width:60px; overflow:hidden; float:left; text-align:center;}
+                #imageMenu li img{width:50px; height:50px;cursor:pointer;}
+                #imageMenu li#onlickImg img, #imageMenu li:hover img{ width:60px; height:60px; border:1px solid #f03b43;}
+                /* bigImg */
+                .bigImg{position:relative; float:left; width:400px; height:400px; overflow:hidden;}
+                .bigImg #midimg{width:400px; height:400px;}
+                .bigImg #winSelector{width:235px; height:210px;}
+                #winSelector{position:absolute; cursor:crosshair; filter:alpha(opacity=15); -moz-opacity:0.15; opacity:0.15; background-color:#000; border:1px solid #fff;}
+                /* bigView */
+                #bigView{position:absolute;border: 1px solid #959595; overflow: hidden; z-index:999;}
+                #bigView img{position:absolute;}
+            }
+            .v7_packaging{
+                color: #787878;
+                padding: 20px;
+                line-height: 20px;
+            }
+            .v7_proshare{
+                padding: 0px 20px;
+                >div{padding-top:5px;float:left;padding-right:5px;}
+                a{
+                    float: left;display:block;
+                    font-size: 12px;
+                    padding-left: 17px;
+                    line-height: 16px;
+                    height: 16px;
+                    background: url('../images/goods/share.png')no-repeat;
+                    cursor: pointer;
+                    margin: 6px 6px 6px 0;
+                    &:hover{color:#333;opacity: .8;}
+                    &:nth-child(3){background-position: 0 -52px;}
+                    &:nth-child(4){background-position: 0 -104px;}
+                    &:nth-child(5){background-position: 0 -260px;}
+                    &:nth-child(6){background-position: 0 -208px;}
+                    &:nth-child(7){background-position: 0 -1612px;}
+                }
+            }
+            
+        }
+        .goods_cont_r{
+            width: 808px;
+            height:605px;
+            float: right;
+            .mainContent{
+                width: 531px;
+                padding: 20px 0px 40px 26px;
+                float: left;
+                h1{
+                    min-height: 25px;
+                    line-height: 25px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #000;
+                    font-family: 'Microsoft yahei';
+                    i{
+                        width: 42px;height: 20px;
+                        display: block;
+                        float: left;
+                        margin: 4px 5px auto 0px;
+                        background:url('../images/goods/goods_spirpt.png') -111px -252px no-repeat;
+                    }
+                }
+                .priceBox   {
+                    min-height: 48px;
+                    line-height: 48px;
+                    margin-top: 15px;
+                    position: relative;
+                    font-family: 'Microsoft yahei';
+                    background: url(../images/goods/pricebg.jpg) left top no-repeat #fef9f6;
+                    .leftlabel {
+                        width: 60px;
+                        line-height: 18px;
+                        margin-top: 15px;
+                        height: 18px;
+                        float: left;
+                        padding-left: 9px;
+                    }
+                    .goods_price{
+                        min-height: 48px;
+                        float: right;
+                        color: #f54343;
+                        font-weight: bold;
+                        font-size: 28px;
+                        width: 420px;
+                    }
+                }
+                .summary1{
+                    display: block;
+                    font-size: 12px;
+                    color: #666666;
+                    font-family: Arial,Verdana,'宋体';min-height: 50px;
+                    margin-top:15px;
+                    li{
+                        line-height: 18px;
+                        padding: 4px 0;
+                        display: block;
+                        font-size: 12px;
+                        color: #666666;
+                        font-family: Arial,Verdana,'宋体';
+                        overflow:hidden;
+                        .dt{
+                            display:block;
+                            width: 68px;
+                            float: left;
+                            color: #9b9b9b;
+                        }
+                        .dd,.guige{
+                            display:block;
+                            width: 430px;
+                            min-height: 15px;
+                            float: left;
+                            margin-left: 5px;
+                        }
+                        .guige{
+                            width:120px;text-align:center;
+                            height:24px;line-height:24px;
+                            border:1px solid $hoverColor;
+                            @extend %cus;
+                            position:relative;
+                            i{
+                                background:url('../images/goods/goods_spirpt.png') -485px -254px  no-repeat;
+                                position: absolute;
+                                bottom: -1px;
+                                right: -1px;
+                                width: 15px;
+                                height: 15px;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+                .summary2{
+                    display: block;
+                    font-size: 12px;
+                    color: #666666;
+                    font-family: Arial,Verdana,'宋体';
+                    min-height: 50px;
+                    margin-top:30px;
+                    li{
+                        display: block;
+                        font-size: 12px;
+                        color: #666666;
+                        overflow:hidden;
+                        margin-top:10px;
+                        .dt{
+                            margin-top: 10px;
+                            width: 68px;
+                            float: left;
+                            color: #9b9b9b;
+                        }
+                        .choiceCity{
+                            position:relative;
+                            width: 95px;
+                            height: 24px;
+                            line-height: 24px;
+                            text-align: center;
+                            border: 1px solid #cccccc;
+                            position: relative;
+                            padding-right: 10px;
+                            float: left;
+                            @extend %cus;
+                            color: #444444;margin-top: 6px;
+                            i{
+                                background:url('../images/goods/goods_spirpt.png') -445px -48px  no-repeat;
+                                width: 7px;
+                                height: 4px;
+                                position: absolute;
+                                top: 11px;
+                                right: 8px;
+                            }
+                            &:hover i{background-position:-452px -48px;}
+                        }
+                        .choiceNum{
+                            width: 430px;
+                            min-height: 15px;
+                            float: left;
+                            .numBox{
+                                width: 75px;
+                                float: left;
+                                margin-top: 4px;
+                                margin-left: 0px;
+                                input{
+                                    width: 48px;height: 31px;
+                                    line-height: 27px;
+                                    border: 1px solid #ccc;
+                                    float: left;
+                                    margin-right: 2px;
+                                    color: #555;
+                                    font-size: 14px;
+                                    text-align: center;
+                                    font-family: Verdana, Microsoft yahei, Geneva, sans-serif;
+                                }
+                                i{
+                                    display:block;float:left;
+                                    height: 14px;width:16px;
+                                    @extend %cus;
+                                    background:url('../images/goods/goods_spirpt.png') -249px -48px no-repeat;
+                                    &:nth-child(3){background-position:-249px -61px;margin-top:2px;height:15px;}
+                                    &:nth-child(3):hover{background-position: -215px -61px;}
+                                    &:nth-child(2):hover{background-position: -215px -48px;}
+                                }
+                            }
+                            .commit{
+                                float:left;
+                                width: 150px;
+                                height: 40px;
+                                line-height: 40px;
+                                text-align: center;
+                                background: #ff5c4d;
+                                display: block;
+                                color: #fff;
+                                font-size: 16px;
+                                margin-left: 10px;
+                                cursor: pointer;
+                                border-radius: 2px;
+                            }
+                            .v7_forsale{
+                                height: 40px;
+                                line-height: 40px;
+                                float: left;
+                                margin-left: 10px;
+                                color: #878787
+                            }
+                        }
+                        .dd{
+                            width: 430px;
+                            min-height: 15px;
+                            float: left;
+                        }
+                        .support{
+                            min-height: 32px;
+                            line-height: 32px;
+                            padding-bottom: 10px;
+                            width: 485px;
+                            float: left;
+                            margin-left: 5px;
+                            a{
+                                margin-right: 20px;
+                                display: block;
+                                float: left;
+                                i{
+                                    width: 17px;
+                                    height: 17px;
+                                    display:block;
+                                    float: left;
+                                    margin: 7px 3px 0px 0px;
+                                    background:url('../images/goods/goods_spirpt.png') -332px -49px no-repeat;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .store{
+                width: 211px;
+                min-height: 200px;
+                padding: 0px 20px;
+                border-left: 1px solid #f2f2f2;
+                float: right;
+                margin-top: 20px;
+                padding-bottom: 20px;
+                box-sizing:content-box;
+                h3{
+                    height: 36px;
+                    line-height: 36px;
+                    border-bottom: 1px solid #e6e6e6;
+                    margin-bottom: 15px;
+                    font-size: 14px;
+                    font-family: Microsoft yahei;
+                    color: #101010;
+                    padding-bottom: 0px;
+                    margin-top: -5px;
+                }
+                ul{
+                    li{
+                        width: 54px;height: 23px;line-height: 23px;
+                        float:left;box-sizing:content-box;
+                        margin-bottom: 4px;
+                        background: #fff;
+                        padding: 0px 7.5px;
+                        color: #909090;
+                    }
+                    .cur{background: #ff7e6f;color: #fff;}
+                       
+                }
+            }
+        }
+    }
+}

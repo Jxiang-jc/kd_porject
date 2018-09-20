@@ -31,7 +31,8 @@ require.config({
         // 'custom':['bootstrapjs'],
         'custom':['jquery'],
         'listPage':['custom'],
-        'pagination':['jquery']
+        'pagination':['jquery'],
+        'goods':['lxzoom']
 
     },
 });
