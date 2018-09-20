@@ -13,10 +13,97 @@ require(['config'], function () {
         });
         $('footer').load('../html/commonHtml.html #pageFooter .footer_t,#pageFooter .footer_b');
 
+
+        
+        let goods = {
+            title:'h1',
+            price:'.goods_price',
+            name:'.goods_name',
+            from:'.goods_from',
+            guoyao:'.goods_num',
+            guige:'.guige',
+            //放大镜
+
+            midimg:'#midimg',//中图
+            imageMenu:'#imageMenu',//小图
+
+            init(){
+                $.get('../api/details.php',`id=${location.search.slice(1)}`, (data)=>{
+                    // console.log(data)
+                    this.res = JSON.parse(data)[0];
+
+                    this.zoomImg = JSON.parse(this.res.zoomsmall); 
+                    // console.log(this.res,this.zoomImg);
+
+                     //创建ul
+                     this.ul = $('<ul/>');
+
+                    this.render(this.res);//渲染页面
+
+                    this.jxzoom(this.zoomImg);//放大镜渲染
+
+                    //点击事件
+                    $('.numBox').on('click','i',function(){
+                        //点击获取输入框内容
+                        let val = $('.addNum').val()*1;
+
+                        if($(this).hasClass('add_icon')){
+                            val++;
+                        }else if($(this).hasClass('reduce_icon')){
+                            val--;
+                            if(val<=1){
+                                val = 1;
+                            }
+                        }
+                        $('.addNum').val(val);
+                    })
+
+                });
+            },
+
+            //渲染页面
+            render(res){
+                $(this.title).html(`<i></i>${res.goodsname}`);
+                $(this.price).html(`￥${res.vip}`);
+                $(this.name).html(`${res.usuallyname}`);
+                $(this.from).html(`${res.makefrom}`);
+                $(this.guoyao).html(`${res.agreenum}`);
+                $(this.guige).html(`${res.guige}<i></i>`);
+
+
+            },
+            //渲染放大镜
+            jxzoom(zoomImg){
+                //放大镜
+                $(this.midimg).attr('src',zoomImg[0]);
+                $(this.midimg).css({
+                    'width':398,
+                    'height':398
+                })
+
+                this.ul.html(
+                    zoomImg.map(item=>{
+                        return `<li><img src="${item}" width="68" height="68"></li>`
+                        
+                    }).join("")
+                )
+                console.log(this.imageMenu)
+                $(this.imageMenu).html(this.ul);
+                
+                //给第一个li添加id，因为别人的插件需要用到
+                $(this.ul).children(':first-child').attr('id','onlickImg');
+                
+                zoom($(this.ul).children().length);
+                
+            }
+        }
+        goods.init();
+
         //放大镜
-        function zoom(){
+        function zoom(lengths){
             // 图片上下滚动
-            var count = $("#imageMenu li").length - 5; /* 显示 6 个 li标签内容 */
+            var count = $("#imageMenu li").length - lengths; /* 显示 6 个 li标签内容 */
+            console.log(count)
             var interval = $("#imageMenu li:first").width();
             var curIndex = 0;
 
@@ -155,11 +242,5 @@ require(['config'], function () {
                 return { left: X, top: Y };
             }
         }
-        zoom();
-        
-        let goods = {
-            
-        }
-
     })
 })
