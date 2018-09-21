@@ -1,5 +1,5 @@
 @charset "UTF-8";
-#goods .goods_cont .goods_cont_r .mainContent .summary1 li .guige, #goods .goods_cont .goods_cont_r .mainContent .summary2 li .choiceCity, #goods .goods_cont .goods_cont_r .mainContent .summary2 li .choiceNum .numBox i { cursor: pointer; }
+#goods .goods_cont .goods_cont_r .mainContent .summary1 li .guige, #goods .goods_cont .goods_cont_r .mainContent .summary2 li .choiceCity, #goods .goods_cont .goods_cont_r .mainContent .summary2 li .choiceNum .numBox i, #goods .goods_conb .goods_conb_l .empty span { cursor: pointer; }
 
 a { color: #666666; }
 
@@ -142,3 +142,27 @@ a:hover { text-decoration: none; color: #f03b43; }
 #goods .goods_cont .goods_cont_r .store ul li { width: 54px; height: 23px; line-height: 23px; float: left; box-sizing: content-box; margin-bottom: 4px; background: #fff; padding: 0px 7.5px; color: #909090; }
 
 #goods .goods_cont .goods_cont_r .store ul .cur { background: #ff7e6f; color: #fff; }
+
+#goods .goods_cont .goods_cont_r .store .changeModel .address span { line-height: 26px; display: block; padding-left: 25px; overflow: hidden; color: #4b4b4b; background: url(../images/goods/goods_spirpt.png) -480px -4px no-repeat; }
+
+#goods .goods_cont .goods_cont_r .store .changeModel .address span:nth-child(2) { background-position: -479px -35px; overflow: visible; }
+
+#goods .goods_conb { margin-top: 20px; width: 200px; min-height: 150px; border: 1px solid #ddd; }
+
+#goods .goods_conb .goods_conb_l { background: #fff; }
+
+#goods .goods_conb .goods_conb_l h3 { height: 39px; line-height: 39px; padding: 0px 10px; border-bottom: 1px solid #e5e5e5; font-weight: bold; color: #000; font-size: 14px; }
+
+#goods .goods_conb .goods_conb_l .recBro { padding: 0px 20px 20px 20px; }
+
+#goods .goods_conb .goods_conb_l .recBro li { padding-top: 10px; }
+
+#goods .goods_conb .goods_conb_l .recBro li .recImg { height: 100px; text-align: center; }
+
+#goods .goods_conb .goods_conb_l .recBro li .recName { height: 20px; line-height: 20px; color: #646965; overflow: hidden; }
+
+#goods .goods_conb .goods_conb_l .recBro li .recPri { font-family: Verdana, Geneva, sans-serif; color: #f54343; height: 20px; line-height: 20px; }
+
+#goods .goods_conb .goods_conb_l .empty { height: 29px; line-height: 29px; border-top: 1px dotted #cbcbcb; padding: 5px 0px; margin: 15px 20px 20px 20px; }
+
+#goods .goods_conb .goods_conb_l .empty span { color: #6575da; display: block; float: right; }

@@ -57,7 +57,8 @@ require(['config'], function () {
 
                     $(e.target).prev().val('');//清空输入框
 
-                    window.scrollTo(0, 200);
+                    // window.scrollTo(0, 200);
+                    $('html,body').animate({scrollTop:200},2000);
 
                     this.getData(pageNo, qty);
 
@@ -168,16 +169,17 @@ require(['config'], function () {
                     }
                 })
 
-                
+                //鼠标移入移出
                 $('.productList').on('mouseover','li',function(){
                     $(this).addClass('cool');
-                })
-                $('.productList').on('mouseout','li',function(){
+                }).on('mouseout','li',function(){
                     $(this).removeClass('cool');
                 })
 
                 $('.productList').on('click','img,.proName',e=>{
+
                     location.href = 'goods.html?' + $(e.target).closest('li').attr('data-idx');
+                        
                 })
                 
 
@@ -197,6 +199,8 @@ require(['config'], function () {
                     new GoodsList(res);
                     this.renderNum(res);
                     this.renderPage(res);
+
+                    
                 })
             },
 
@@ -311,7 +315,33 @@ require(['config'], function () {
             //重新渲染后懒加载一次
             page.checkShow();
 
+            $(this.ele).on('click','li',e=>{
+                e.preventDefault();
+
+                var currentId = $(e.target).closest('li').data('idx');
+                
+                console.log(obj.data)
+
+                // 根据id获取整个商品的信息
+				var currentGoods = obj.data.filter(function(item){
+                  
+                    return item.id == currentId;
+                    
+                })[0];
+                
+                this.cookies(currentGoods);
+            })
+            
         }
+        //把当前点击输入cookie
+        GoodsList.prototype.cookies = function(obj){
+            // 把当前商品写入cookie
+            var now = new Date();
+            now.setDate(now.getDate()+3);
+            document.cookie = 'currentGoods=' + JSON.stringify(obj) + ';expires=' + now;
+            
+        } 
+
 
         page.init();
     })

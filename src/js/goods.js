@@ -1,6 +1,6 @@
 require(['config'], function () {
 
-    require(['jquery', 'custom'], function ($) {
+    require(['jquery', 'custom', 'ellipsis'], function ($) {
         $('#pageHeader').load('../html/commonHtml.html #pageHeader .container', function () {
             $('#pageHeader').indexs();
         });
@@ -14,44 +14,46 @@ require(['config'], function () {
         $('footer').load('../html/commonHtml.html #pageFooter .footer_t,#pageFooter .footer_b');
 
 
-        
+
         let goods = {
-            title:'h1',
-            price:'.goods_price',
-            name:'.goods_name',
-            from:'.goods_from',
-            guoyao:'.goods_num',
-            guige:'.guige',
+            title: 'h1',
+            price: '.goods_price',
+            name: '.goods_name',
+            from: '.goods_from',
+            guoyao: '.goods_num',
+            guige: '.guige',
             //放大镜
+            midimg: '#midimg',//中图
+            imageMenu: '#imageMenu',//小图
+            //分店
+            store: '.store',
 
-            midimg:'#midimg',//中图
-            imageMenu:'#imageMenu',//小图
-
-            init(){
-                $.get('../api/details.php',`id=${location.search.slice(1)}`, (data)=>{
+            init() {
+                //放大镜及细节
+                $.get('../api/details.php', `id=${location.search.slice(1)}`, (data) => {
                     // console.log(data)
                     this.res = JSON.parse(data)[0];
 
-                    this.zoomImg = JSON.parse(this.res.zoomsmall); 
+                    this.zoomImg = JSON.parse(this.res.zoomsmall);
                     // console.log(this.res,this.zoomImg);
 
-                     //创建ul
-                     this.ul = $('<ul/>');
+                    //创建ul
+                    this.ul = $('<ul/>');
 
                     this.render(this.res);//渲染页面
 
                     this.jxzoom(this.zoomImg);//放大镜渲染
 
                     //点击事件
-                    $('.numBox').on('click','i',function(){
+                    $('.numBox').on('click', 'i', function () {
                         //点击获取输入框内容
-                        let val = $('.addNum').val()*1;
+                        let val = $('.addNum').val() * 1;
 
-                        if($(this).hasClass('add_icon')){
+                        if ($(this).hasClass('add_icon')) {
                             val++;
-                        }else if($(this).hasClass('reduce_icon')){
+                        } else if ($(this).hasClass('reduce_icon')) {
                             val--;
-                            if(val<=1){
+                            if (val <= 1) {
                                 val = 1;
                             }
                         }
@@ -59,10 +61,69 @@ require(['config'], function () {
                     })
 
                 });
+
+                //分店
+                $.get('../api/location.php', (data) => {
+                    this.datas = JSON.parse(data);
+                    // console.log(this.datas);
+                    //创建ul
+                    this.ul2 = $('<ul class="clearfix"/>');
+
+
+                    this.div = $('<div class="changeModel"/>');
+
+
+
+                    this.loca(this.datas, this.datas[0]);
+
+
+                    $(this.store).on('mouseover', 'li', (e) => {
+                        console.log(e.target)
+                        $(e.target).addClass('cur').siblings().removeClass('cur');
+
+                        //获取当前文本内容
+                        var values = $(e.target).text();
+
+                        $.get('../api/location.php', { 'name': values }, (res) => {
+                            let details = JSON.parse(res);
+                            details = details[0];
+                            // console.log(details)
+
+                            this.locaImg(details);
+
+                        })
+
+                    })
+                })
+
+
+
+
+                // 用于保存浏览记录
+                var historyList = [];
+
+
+
+                // 先获取cookie
+                var cookie = document.cookie.split('; ');
+                console.log(cookie);//["currentGoods={"id":"1","imgurl":"../images/goodsli…"12.00","sale":"12","time":"2019-02-01 14:48:44"}"]
+                this.getCookie(cookie,historyList);
+
+                //点击清空浏览记录
+                $('.empty span').on('click', function () {
+                    console.log($('.recBro'))
+                    $('.recBro').html('您已清空最近浏览过的商品');
+
+                    var now = new Date();
+                    now.setDate(now.getDate() - 1);
+                    document.cookie = 'historyList=' + JSON.stringify([]) + ';expires=' + now;
+                    document.cookie = 'currentGoods=' + JSON.stringify([]) + ';expires=' + now;
+                })
+
             },
 
             //渲染页面
-            render(res){
+            render(res) {
                 $(this.title).html(`<i></i>${res.goodsname}`);
                 $(this.price).html(`￥${res.vip}`);
                 $(this.name).html(`${res.usuallyname}`);
@@ -73,37 +134,124 @@ require(['config'], function () {
 
             },
             //渲染放大镜
-            jxzoom(zoomImg){
+            jxzoom(zoomImg) {
                 //放大镜
-                $(this.midimg).attr('src',zoomImg[0]);
+                $(this.midimg).attr('src', zoomImg[0]);
                 $(this.midimg).css({
-                    'width':398,
-                    'height':398
+                    'width': 398,
+                    'height': 398
                 })
 
                 this.ul.html(
-                    zoomImg.map(item=>{
+                    zoomImg.map(item => {
                         return `<li><img src="${item}" width="68" height="68"></li>`
-                        
+
                     }).join("")
                 )
-                console.log(this.imageMenu)
                 $(this.imageMenu).html(this.ul);
-                
+
                 //给第一个li添加id，因为别人的插件需要用到
-                $(this.ul).children(':first-child').attr('id','onlickImg');
-                
+                this.ul.children(':first-child').attr('id', 'onlickImg');
+
                 zoom($(this.ul).children().length);
-                
+
+            },
+            //渲染全国分店
+            loca(datas) {
+                //遍历获取城市名
+                this.ul2.html(
+                    datas.map(item => {
+                        return `<li>${item.name}</li>`
+                    }).join('')
+                )
+
+                $(this.store).append(this.ul2);
+
+                //高亮当前
+                this.ul2.children(':first-child').addClass('cur');
+
+                //一进页面时先有一个
+                this.div.html(
+                    `<img src="../images/goods/position/position (2).jpg"width="209">
+                    <div class="address">
+                        <span><i></i> 020-87613558，020-87303808</span>
+                        <span><i></i>广州市越秀区先烈南路9号101房</span>
+                    </div> `
+                )
+                $('.address span:last').ellipsis({ row: 2, char: '...' })
+
+                $(this.store).append(this.div);
+
+            },
+            locaImg(details) {
+                //生成图片电话及地址
+                this.div.html(
+                    `<img src="${details.imgurl}"width="209">
+                    <div class="address">
+                        <span><i></i> ${details.phone}</span>
+                        <span><i></i>${details.localtion}</span>
+                    </div> `
+                )
+                $('.address span:last').ellipsis({ row: 2, char: '...' })
+
+                $(this.store).append(this.div);
+            },
+            //获取浏览记录
+            getCookie(cookie,historyList) {
+                // 用于保存当前商品信息
+                var currentGoods;
+
+
+                cookie.forEach(function (item) {
+                    var arr = item.split('=');
+                    if (arr[0] === 'currentGoods') {
+                        currentGoods = JSON.parse(arr[1]);
+                    } else if (arr[0] === 'historyList') {
+                        historyList = JSON.parse(arr[1]);
+                    }
+                });
+                // 如果当前商品已经存在historyList，则删除（放置重复）
+                if (historyList.length > 0) {
+                    for (var i = 0; i < historyList.length; i++) {
+                        if (historyList[i].id === currentGoods.id) {
+                            historyList.splice(i, 1);
+                            break;
+                        }
+                    }
+                }
+
+                historyList.unshift(currentGoods);
+                // 重新把history写回cookie
+                // 3天有效期
+                var now = new Date();
+                now.setDate(now.getDate() + 3);
+                document.cookie = 'historyList=' + JSON.stringify(historyList) + ';expires=' + now;
+
+                // 把历史记录写入页面.history
+                var $recBroUl = $('<ul class="clearfix"/>')
+
+                $recBroUl.append(historyList.map(function (item) {
+                    return `<li>
+                    <p class="recImg"><a href="goods.html?${item.id}"y><img src="${item.imgurl}" width="100" height="100"  alt=""></a></p>
+                    <p class="recName"><a href="goods.html?${item.id}">${item.name}</a> </p>
+                    <p class="recPri">￥${item.price}</p>
+                    <li/>`
+                }).join('')
+                )
+                console.log($recBroUl)
+                this.$recBroUl = $recBroUl;
+                $('.recBro').append($recBroUl);
+
             }
+
         }
         goods.init();
 
         //放大镜
-        function zoom(lengths){
+        function zoom(lengths) {
             // 图片上下滚动
             var count = $("#imageMenu li").length - lengths; /* 显示 6 个 li标签内容 */
-            console.log(count)
+            // console.log(count)
             var interval = $("#imageMenu li:first").width();
             var curIndex = 0;
 
@@ -121,7 +269,7 @@ require(['config'], function () {
             });
             // 解决 ie6 select框 问题
             $.fn.decorateIframe = function (options) {
-                if ('undefined' == typeof(document.body.style.maxHeight)) {
+                if ('undefined' == typeof (document.body.style.maxHeight)) {
                     var opts = $.extend({}, $.fn.decorateIframe.defaults, options);
                     $(this).each(function () {
                         var $myThis = $(this);
@@ -167,7 +315,7 @@ require(['config'], function () {
                 if ($(this).attr("id") != "onlickImg") {
                     window.clearTimeout(midChangeHandler);
                     midChange($(this).attr("src").replace("small", "mid"));
-                    $(this).css({ "border": "1px solid #f03b43" }).parent().siblings().children().css({"border":"none"});
+                    $(this).css({ "border": "1px solid #f03b43" }).parent().siblings().children().css({ "border": "none" });
                 }
             }).bind("mouseout", function () {
                 if ($(this).attr("id") != "onlickImg") {
@@ -178,7 +326,7 @@ require(['config'], function () {
                 }
             });
             function midChange(src) {
-                $("#midimg").attr("src", src).on('load',function () {
+                $("#midimg").attr("src", src).on('load', function () {
                     changeViewImg();
                 });
             }

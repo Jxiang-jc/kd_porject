@@ -4,12 +4,16 @@
     // var_dump($_GET['pageNo']);
 
     $idx=isset($_GET['id']) ? $_GET['id'] : null;
-
+    $name = isset($_GET['name']) ? $_GET['name']: null;
     // var_dump($idx);
     
-
-    $sql = "select * from goods where id='$idx'";
+    if($name){
+        $sql = "select * from location where name='$name'";
+    }else{
+        $sql = "select * from location";
+    }
     
+
 
     $result = $conn->query($sql);
 

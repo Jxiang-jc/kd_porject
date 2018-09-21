@@ -344,6 +344,68 @@
                     .cur{background: #ff7e6f;color: #fff;}
                        
                 }
+                .changeModel{
+                    .address{
+                        span{
+                            line-height: 26px;
+                            display:block;
+                            padding-left: 25px;
+                            overflow: hidden;
+                            color: #4b4b4b;
+                            background:url(../images/goods/goods_spirpt.png) -480px -4px no-repeat;
+                            &:nth-child(2){background-position:-479px -35px;overflow:visible;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .goods_conb{
+        margin-top:20px;
+        width:200px;
+        min-height:150px;
+        border:1px solid #ddd;
+        .goods_conb_l{
+            background:#fff;
+            h3{
+                height: 39px;
+                line-height: 39px;
+                padding: 0px 10px;
+                border-bottom: 1px solid #e5e5e5;
+                font-weight: bold;
+                color: #000;
+                font-size: 14px;
+            }
+            .recBro{
+                padding: 0px 20px 20px 20px;
+                li{
+                    padding-top:10px;
+                    .recImg{height:100px;text-align:center;}
+                    .recName{
+                        height: 20px;
+                        line-height: 20px;
+                        color: #646965;
+                        overflow: hidden;
+                    }
+                    .recPri{
+                        font-family: Verdana, Geneva, sans-serif;
+                        color: #f54343;
+                        height: 20px;
+                        line-height: 20px;
+                    }
+                }
+            }
+            .empty{
+                height: 29px;
+                line-height: 29px;
+                border-top: 1px dotted #cbcbcb;
+                padding: 5px 0px;
+                margin: 15px 20px 20px 20px;;
+                span{
+                    color: #6575da;
+                    display:block;float:right;
+                    @extend %cus;
+                }
             }
         }
     }
