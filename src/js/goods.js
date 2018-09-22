@@ -27,6 +27,8 @@ require(['config'], function () {
             imageMenu: '#imageMenu',//小图
             //分店
             store: '.store',
+            //吸顶
+            topAnchor: '.topAnchor',
 
             init() {
                 //放大镜及细节
@@ -43,22 +45,6 @@ require(['config'], function () {
                     this.render(this.res);//渲染页面
 
                     this.jxzoom(this.zoomImg);//放大镜渲染
-
-                    //点击事件
-                    $('.numBox').on('click', 'i', function () {
-                        //点击获取输入框内容
-                        let val = $('.addNum').val() * 1;
-
-                        if ($(this).hasClass('add_icon')) {
-                            val++;
-                        } else if ($(this).hasClass('reduce_icon')) {
-                            val--;
-                            if (val <= 1) {
-                                val = 1;
-                            }
-                        }
-                        $('.addNum').val(val);
-                    })
 
                 });
 
@@ -96,18 +82,11 @@ require(['config'], function () {
                     })
                 })
 
-
-
-
-                // 用于保存浏览记录
-                var historyList = [];
-
-
-
-                // 先获取cookie
+                // 先获取cookie 浏览记录
                 var cookie = document.cookie.split('; ');
                 console.log(cookie);//["currentGoods={"id":"1","imgurl":"../images/goodsli…"12.00","sale":"12","time":"2019-02-01 14:48:44"}"]
-                this.getCookie(cookie,historyList);
+
+                this.getCookie(cookie);
 
                 //点击清空浏览记录
                 $('.empty span').on('click', function () {
@@ -116,12 +95,48 @@ require(['config'], function () {
 
                     var now = new Date();
                     now.setDate(now.getDate() - 1);
-                    document.cookie = 'historyList=' + JSON.stringify([]) + ';expires=' + now;
-                    document.cookie = 'currentGoods=' + JSON.stringify([]) + ';expires=' + now;
+
+                    //清空cookie
+                    document.cookie = 'historyList=' + JSON.stringify('x') + ';expires=' + now;
+                    document.cookie = 'currentGoods=' + JSON.stringify('x') + ';expires=' + now;
                 })
 
-            },
+                //点击事件
+                $('.numBox').on('click', 'i', function () {
+                    //点击获取输入框内容
+                    let val = $('.addNum').val() * 1;
 
+                    if ($(this).hasClass('add_icon')) {
+                        val++;
+                    } else if ($(this).hasClass('reduce_icon')) {
+                        val--;
+                        if (val <= 1) {
+                            val = 1;
+                        }
+                    }
+                    $('.addNum').val(val);
+                })
+
+                //吸顶
+                window.onscroll = () => {
+                    if (scrollY > 900) {
+                        $(this.topAnchor).css('display', 'block');
+                        $('.rigAnchor').css({
+                            'position': 'fixed',
+                            'top': 68,
+                            'right': '10%'
+                        })
+                    } else {
+                        $(this.topAnchor).css('display', 'none');
+                        $('.rigAnchor').css({
+                            'position': 'absolute',
+                            'top': 40,
+                            'right': 0
+                        })
+                    }
+                }
+
+            },
             //渲染页面
             render(res) {
                 $(this.title).html(`<i></i>${res.goodsname}`);
@@ -197,10 +212,13 @@ require(['config'], function () {
                 $(this.store).append(this.div);
             },
             //获取浏览记录
-            getCookie(cookie,historyList) {
+            getCookie(cookie) {
+
                 // 用于保存当前商品信息
                 var currentGoods;
 
+                // 用于保存浏览记录
+                var historyList = [];
 
                 cookie.forEach(function (item) {
                     var arr = item.split('=');
@@ -210,17 +228,19 @@ require(['config'], function () {
                         historyList = JSON.parse(arr[1]);
                     }
                 });
+
                 // 如果当前商品已经存在historyList，则删除（放置重复）
-                if (historyList.length > 0) {
-                    for (var i = 0; i < historyList.length; i++) {
-                        if (historyList[i].id === currentGoods.id) {
-                            historyList.splice(i, 1);
-                            break;
-                        }
+                for (var i = 0; i < historyList.length; i++) {
+                    if (historyList[i].id === currentGoods.id) {
+                        historyList.splice(i, 1);
+                        break;
                     }
                 }
 
-                historyList.unshift(currentGoods);
+                //清空所有以后，currentGoods就没了，所以需要判断，不然会出错，虽然不会影响实际，但看到红色的我就是不舒服哈哈哈
+                if (currentGoods != null) {
+                    historyList.unshift(currentGoods);
+                }
                 // 重新把history写回cookie
                 // 3天有效期
                 var now = new Date();

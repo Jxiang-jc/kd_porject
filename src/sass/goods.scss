@@ -7,8 +7,10 @@
     padding:0;
     font:$fontFamily;
 }
+body{background: #f5f5f5 !important;}
 
 #goods{
+    
     .crumbs{
         height: 35px !important;
         line-height: 35px !important;
@@ -362,11 +364,13 @@
     }
     .goods_conb{
         margin-top:20px;
-        width:200px;
-        min-height:150px;
-        border:1px solid #ddd;
+        overflow:hidden;
         .goods_conb_l{
             background:#fff;
+            width:200px;
+            min-height:150px;
+            border:1px solid #ddd;
+            float:left;
             h3{
                 height: 39px;
                 line-height: 39px;
@@ -405,6 +409,229 @@
                     color: #6575da;
                     display:block;float:right;
                     @extend %cus;
+                }
+            }
+        }
+        .goods_conb_r{
+            width: 1000px;
+            min-height: 10px;
+            float: right;
+            height:3000px;
+            .goods_container{
+               position:relative;
+                .v7_protab_tit{
+                    height: 38px;
+                    line-height: 38px;
+                    background: url('../images/goods/v7_tabtit.png') repeat-x;
+                    border: 1px solid #cccccc;
+                    font-size: 14px;
+                    box-sizing:content-box;
+                    li{
+                        float:left; 
+                        display:block;
+                        width: 100px;
+                        border-right: 1px solid #cccccc;
+                        text-align: center;
+                        @extend %cus;
+                        z-index:1;
+                    }
+                    .cur{
+                        height: 40px;
+                        line-height: 40px;
+                        padding-left: 1px;
+                        margin: -1px 0px auto -1px;
+                        background: #fe5c4d;
+                        color: #fff;
+                        z-index: 2;
+                    }
+               }
+               .swtab{
+                    width: 802px;
+                    background: #fff;
+                    padding: 25px;
+                    margin-left: 0px;
+                    display:block;
+                    .swtab_t li{
+                        width: 50%;height: 22px;line-height: 22px;
+                        display: block;
+                        float: left;
+                        padding: 2px 0px;
+                        overflow: hidden;white-space: nowrap;
+                        text-overflow:ellipsis;
+                        color:#666;
+                        span{
+                            padding-right: 10px;
+                            color: #333;
+                            line-height: 22px;
+                        }
+                    }
+                    .swtab_b{
+                        margin:20px 0;
+                        li{
+                            height: 22px;
+                            display: block;
+                            float: left;
+                            padding: 2px 0px;
+                            line-height: 22px;
+                            overflow: hidden;
+                            label{
+                                padding-right: 10px;
+                                color: #333;
+                                line-height: 22px;
+                            }
+                            span{
+                                display: inline-block;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                margin-bottom: -5px;
+                                max-width: 516px;
+                                height: 17px;
+                                line-height: 17px;
+                            }
+                            a{
+                                color: #6575da;
+                                margin-left: 10px;
+                                &:hover{text-decoration:underline;}
+                            }
+                        }
+                    }
+                }
+                .rigAnchor{
+                    width: 188px;
+                    min-height: 340px;
+                    background: #fff;
+                    position: absolute;
+                    right: 0px;
+                    top: 40px;
+                    .rigAnchor_r ul{
+                        padding-top: 30px;
+                        position: relative;
+                        .anchorline{
+                            width: 2px;
+                            height: 300px;
+                            position: absolute;
+                            left: 26px;
+                            top: 28px;
+                            background: #f0f0f0;
+                        }
+                        li{
+                            height: 32px;
+                            line-height: 32px;
+                            padding-left: 46px;
+                            font-family: 'Microsoft yahei';
+                            display: block;
+                            position: relative;
+                            i{
+                                width: 14px;
+                                height: 14px;
+                                border-radius: 50%;
+                                background: #a9a9a9;
+                                border: 3px solid #dadada;
+                                display: block;
+                                left: 20px;
+                                top: 9px;
+                                position: absolute;
+                            }
+                        }
+                    }
+
+                }
+            }
+            .aboutus{
+                width: 802px;
+                background: #FFF;
+                text-align: center;
+                margin-left: 0px;
+                text-align: center;
+                padding: 20px 0px;
+                margin-top: 20px;
+            }
+            .topAnchor{
+                height: 68px;
+                background: #FAFAFA;
+                box-shadow: 0 0 5px #888;
+                position: fixed;
+                top: 0px;left: 0px;
+                width: 100%;
+                z-index: 800;
+                display: none;
+                border-bottom: 1px solid #D8D8D8;
+                .proimg{
+                    float:left;
+                    width: 60px;
+                    height: 60px;
+                    overflow: hidden;
+                    margin-top: 4px;
+                }
+                .protxt{
+                    width: 130px;
+                    height: 40px;
+                    line-height: 20px;
+                    float: left;
+                    margin: 15px auto auto 12px;
+                    overflow: hidden;
+                }
+                .profloBox{
+                    width: 990px;
+                    float: right;
+                    .proflo_cont{
+                        min-width: 90px;
+                        height: 35px;
+                        line-height: 35px;
+                        padding: 0px 20px;
+                        text-align: center;
+                        border: 1px solid #dddddd;
+                        background: url('../images/goods/citybg1223.png') repeat-x;
+                        float: left;
+                        margin-right: 15px;
+                        display: block;
+                        margin-top: 15px;
+                    }
+                    .proflo_address{
+                        width: 95px;
+                        height: 35px;
+                        line-height: 35px;
+                        text-align: center;
+                        border: 1px solid #dddddd;
+                        position: relative;
+                        background: url('../images/goods/citybg1223.png') repeat-x;
+                        padding-right: 10px;
+                        margin-top: 15px;
+                        float: left;
+                        cursor: pointer;
+                    }
+                    .proflo_need{
+                        width: 122px;
+                        height: 37px;
+                        line-height: 37px;
+                        display: block;
+                        background: #f54343;
+                        text-align: center;
+                        color: #FFF !important;
+                        font-size: 16px;
+                        float: left;
+                        margin-left: 10px;
+                        font-family: 'Microsoft yahei';
+                        margin-top: 15px;
+                        cursor: pointer;
+                    }
+                    .proflo_pho{
+                        width: 162px;
+                        height: 37px;
+                        float: right;
+                        margin-top: 15px;
+                        span{
+                            width: 162px;
+                            height: 25px;
+                            line-height: 25px;
+                            padding: 16px 0px 0px 20px;
+                            font-family: 'Arial';
+                            font-size: 22px;
+                            color: #f03b44;
+                            position: absolute;
+                        }
+                    }
                 }
             }
         }
