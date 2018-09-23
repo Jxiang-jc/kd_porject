@@ -381,7 +381,7 @@ aside .asideFix .aside_b .qrCodeBox:hover { right: -71px; }
 aside .asideFix .aside_b .qrCodeBox:hover > div { display: block; }
 
 /*footer*/
-#pageFooter .footer_t { height: 192px; margin-top: 20px; background-color: #F03B43; text-align: center; }
+#pageFooter .footer_t { height: 192px; margin-top: 20px; text-align: center; background-color: #F03B43; }
 
 #pageFooter .footer_t dl { display: inline-block; width: 140px; padding-top: 30px; color: #fff; }
 

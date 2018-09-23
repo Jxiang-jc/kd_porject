@@ -10,7 +10,7 @@ require.config({
         'common': 'common',//commonjs
         'bootstrapjs':'../lib/bootstrap-3.3.7-dist/js/bootstrap.min',
         // 'index':'index',
-        'listPage':'listPage',
+        // 'listPage':'listPage',
         'custom':'custom',//首页公共的js
         'pagination':'../lib/jqueryPagination/jquery.pagination.min',//分页插件
         'ellipsis':'../lib/ellipsis/dist/jquery.ellipsis.min'//文本溢出插件
@@ -28,8 +28,8 @@ require.config({
         'bootstrapjs':['jquery'],
         'listPage' : ['jquery'],
         // 'custom':['bootstrapjs'],
+        // 'listPage':['custom'],
         'custom':['jquery'],
-        'listPage':['custom'],
         'pagination':['jquery'],
         'ellipsis':['jquery']
 

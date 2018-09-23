@@ -1,0 +1,138 @@
+//引入变量文件
+@import 'var';
+
+.container{
+    width: 990px;
+    padding:0;
+    font:$fontFamily;
+}
+body{background: #fff !important;} 
+
+#pageHeader{
+    min-height: 90px;
+    background: #FFFFFF;
+    border:0;
+    .container{
+        height:95px;
+        .header_bl{
+            position:relative;
+            height:95px;
+            width: 280px;
+            text-indent:-1000px;
+            background:url('../images/indexImg/logo.jpg')no-repeat;
+            z-index:0;
+            img{
+                position:absolute;
+                top:70px;z-index:1;
+            }
+        }
+
+    }
+    .blank{
+        clear: both;
+        height: 8px;
+        line-height: 8px;
+        visibility: hidden;
+        width:100%;
+    }
+}
+
+#login{
+    width: 980px;
+    border: 5px solid #f0f0f0;
+    background: #fff;
+    margin-bottom: 70px;
+    .login_l{
+        width: 310px;
+        min-height: 320px;
+        float: left;
+        padding: 40px 0px 40px 64px;
+        font-size: 14px;
+        .gdx-1{
+            height: 25px;line-height: 25px;width:307px;
+            a{
+                color: #f54343;
+                margin-right: 8px;
+                &:hover{color:#c40000;}
+            }
+        }
+        .item{
+            padding-top: 2px;
+            position: relative;
+            height: 50px;
+            line-height: 34px;
+            .item-sj{
+                position:relative;
+                .username,.password{
+                    color: rgb(153, 153, 153);
+                    border: 1px solid #e2e2e2;
+                    font-family: arial,"宋体";
+                    font-size: 14px;
+                    height: 38px;
+                    padding: 10px 25px 10px 35px;
+                    width: 307px;
+                    background:url('../images/goods/goods_spirpt.png')no-repeat -472px -163px;
+                }
+                .password{background-position: -469px -201px;}
+            }
+        }
+        .jzzh{
+            margin-top: 5px;width:307px;
+            .checkbox{display:inline-block;margin-top:0;}
+            .mar{margin: 0 5px 0 3px;display:inline-block;font-weight:normal;}
+            .moumov{font-weight:normal;}
+        }
+        .item-xy{
+            padding-top: 0;
+            height: 45px;
+            .item-sj{
+                position: relative;
+                #ptLogin{
+                    width: 310px;
+                    height: 42px;
+                    font-size: 18px;
+                    color: #fff;
+                    text-align: center;
+                    background: #f54343;
+                    border: none;@extend %cus;
+                    font: 400 18px/42px "\5FAE\8F6F\96C5\9ED1";
+                    margin-bottom: 20px;
+                    border-radius:2px;
+                }
+            }
+        }
+        .hzwz{
+            font-size: 12px;
+            border-top: 1px solid #e5e5e5;
+            margin-top: 30px;
+            line-height: 30px;
+            color: #878988;
+            h4{height:30px;line-height:30px;}
+            p a{
+                display:block;
+                width: 43px;
+                height: 43px;
+                margin-right: 10px;
+                float: left;
+                border-radius: 50%;
+                border: 1px solid #ebebeb;
+                background:url('../images/goods/goods_spirpt.png')no-repeat -380px -95px;
+                &:hover{border: 1px solid #f97e87;}
+                &:nth-child(2){background-position: -428px -95px;}
+                &:nth-child(3){
+                    background-position: -428px -143px;
+                    &:hover{border: 1px solid #3cb034;}
+                }
+            }
+        }
+
+    }
+    .login_r{
+        width: 528px;
+        height: 420px;
+        float: right;
+        text-align: center;
+        img{margin-top: 30px;border:0;}
+    }
+}
+

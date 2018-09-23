@@ -129,7 +129,9 @@ html{height:100%;}
 }
 #header_b{
     height:95px;
+    
     .container{
+        
         .header_bl{
             position:relative;
             height:95px;
@@ -918,8 +920,8 @@ aside{
     .footer_t{
         height:192px;
         margin-top:20px;
-        background-color:#F03B43;
         text-align:center;
+        background-color:#F03B43;
         dl{
             display:inline-block;
             width:140px;

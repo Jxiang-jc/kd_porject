@@ -1,0 +1,70 @@
+@charset "UTF-8";
+#login .login_l .item-xy .item-sj #ptLogin { cursor: pointer; }
+
+a { color: #666666; }
+
+a:hover { text-decoration: none; color: #f03b43; }
+
+.container { width: 990px; padding: 0; font: 12px/150% Arial, Verdana, "宋体"; }
+
+body { background: #fff !important; }
+
+#pageHeader { min-height: 90px; background: #FFFFFF; border: 0; }
+
+#pageHeader .container { height: 95px; }
+
+#pageHeader .container .header_bl { position: relative; height: 95px; width: 280px; text-indent: -1000px; background: url("../images/indexImg/logo.jpg") no-repeat; z-index: 0; }
+
+#pageHeader .container .header_bl img { position: absolute; top: 70px; z-index: 1; }
+
+#pageHeader .blank { clear: both; height: 8px; line-height: 8px; visibility: hidden; width: 100%; }
+
+#login { width: 980px; border: 5px solid #f0f0f0; background: #fff; margin-bottom: 70px; }
+
+#login .login_l { width: 310px; min-height: 320px; float: left; padding: 40px 0px 40px 64px; font-size: 14px; }
+
+#login .login_l .gdx-1 { height: 25px; line-height: 25px; width: 307px; }
+
+#login .login_l .gdx-1 a { color: #f54343; margin-right: 8px; }
+
+#login .login_l .gdx-1 a:hover { color: #c40000; }
+
+#login .login_l .item { padding-top: 2px; position: relative; height: 50px; line-height: 34px; }
+
+#login .login_l .item .item-sj { position: relative; }
+
+#login .login_l .item .item-sj .username, #login .login_l .item .item-sj .password { color: #999999; border: 1px solid #e2e2e2; font-family: arial,"宋体"; font-size: 14px; height: 38px; padding: 10px 25px 10px 35px; width: 307px; background: url("../images/goods/goods_spirpt.png") no-repeat -472px -163px; }
+
+#login .login_l .item .item-sj .password { background-position: -469px -201px; }
+
+#login .login_l .jzzh { margin-top: 5px; width: 307px; }
+
+#login .login_l .jzzh .checkbox { display: inline-block; margin-top: 0; }
+
+#login .login_l .jzzh .mar { margin: 0 5px 0 3px; display: inline-block; font-weight: normal; }
+
+#login .login_l .jzzh .moumov { font-weight: normal; }
+
+#login .login_l .item-xy { padding-top: 0; height: 45px; }
+
+#login .login_l .item-xy .item-sj { position: relative; }
+
+#login .login_l .item-xy .item-sj #ptLogin { width: 310px; height: 42px; font-size: 18px; color: #fff; text-align: center; background: #f54343; border: none; font: 400 18px/42px "\5FAE\8F6F\96C5\9ED1"; margin-bottom: 20px; border-radius: 2px; }
+
+#login .login_l .hzwz { font-size: 12px; border-top: 1px solid #e5e5e5; margin-top: 30px; line-height: 30px; color: #878988; }
+
+#login .login_l .hzwz h4 { height: 30px; line-height: 30px; }
+
+#login .login_l .hzwz p a { display: block; width: 43px; height: 43px; margin-right: 10px; float: left; border-radius: 50%; border: 1px solid #ebebeb; background: url("../images/goods/goods_spirpt.png") no-repeat -380px -95px; }
+
+#login .login_l .hzwz p a:hover { border: 1px solid #f97e87; }
+
+#login .login_l .hzwz p a:nth-child(2) { background-position: -428px -95px; }
+
+#login .login_l .hzwz p a:nth-child(3) { background-position: -428px -143px; }
+
+#login .login_l .hzwz p a:nth-child(3):hover { border: 1px solid #3cb034; }
+
+#login .login_r { width: 528px; height: 420px; float: right; text-align: center; }
+
+#login .login_r img { margin-top: 30px; border: 0; }

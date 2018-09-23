@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/commonCs.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/require.js" data-main="../js/login"></script>
+</head>
+
+<body>
+    <header id="pageHeader">
+        <div class="container clearfix">
+            <div class="header_bl fl">
+                <h1>logo</h1>
+                <img src="../images/indexImg/gif.gif" alt="">
+            </div>
+        </div>
+        <div class="blank"></div>
+    </header>
+
+    <main id="login" class="container clearfix">
+        <form id="newLoginForm" name="formLogin"">
+            <div class="login_l">
+                <div class="gdx-1 clearfix">
+                    <div class="fl">账号</div>
+                    <div class="fr">
+                        <a href="reg.html">免费注册</a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="fl item-sj">
+                        <div class="o-regName bc">
+                            <input type="text" value="邮箱/用户名/手机号" autocomplete="off" class="username" name="loginusername"id="userName2">
+                            <div id="auto1"></div>
+                            <label for="" class="focus error" id="errMsgName" style="display:none">请输入用户名</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gdx-1 clearfix">
+                    <div class="fl">密码</div>
+                </div>
+
+                <div class="item">
+                    <div class="fl item-sj">
+                        <div class="o-regName bc">
+                            <div class="logreg151016">
+                                <input type="text" class="password" value="请输入密码">
+                            </div>
+                            <label for="" class="focus error" id="errMsgPwd" style="display:none">密码与用户名不匹配，请重新输入！</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item jzzh clearfix">
+                    <div class="fl">
+                        <label><input type="checkbox" name="remember" id="rememberPwd2" class="checkbox" value="1">
+                            <span class="mar">自动登录</span></label>
+                    </div>
+                    <div class="fr">
+                        <label><a href="#" class="moumov">忘记密码?</a></label>
+                    </div>
+                </div>
+
+                <div class="item item-xy">
+                    <div class="fl item-sj">
+                        <input type="button" name="submit" value="登 录" class="zc-ljzc" id="ptLogin">
+                    </div>
+                </div>
+
+                <div class="hzwz">
+                    <h4>您还可以使用合作网站账号登录康德乐：</h4>
+                    <p class="loginWay clearfix">
+                        <a href="#" class="qq"></a>
+                        <a href="#" class="weibo"></a>
+                        <a href="#" class="wechat"></a>
+                    </p>
+                </div>
+
+            </div>
+        </form>
+        <div class="login_r">
+            <img src="../images/goods/login_reg/logregmap.jpg" width="422" height="359" class="mart30" />
+        </div>
+
+    </main>
+
+    <aside id="z_aside">
+    </aside>
+
+    <footer id="pageFooter">
+    </footer>
+</body>
+
+</html>

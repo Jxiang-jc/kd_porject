@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/commonCs.css">
+    <link rel="stylesheet" href="../css/reg.css">
+    <script src="../js/require.js" data-main="../js/reg"></script>
+</head>
+
+<body>
+    <header id="pageHeader">
+        <div class="container clearfix">
+            <div class="header_bl fl">
+                <h1>logo</h1>
+                <img src="../images/indexImg/gif.gif" alt="">
+            </div>
+        </div>
+        <div class="blank"></div>
+    </header>
+
+    <main id="reg" class="container clearfix">
+        <div class="reg_l clearfix">
+            <h3 class="regtitle">免费注册</h3>
+            <form action="../index.html" method="post" name="formUser">
+                <dl class="item">
+                    <dt>
+                        <span class="xing">*</span>账号
+                    </dt>
+                    <dd>
+                        <input type="text" class="bk-default username" name="username" id="username">
+                        <label for="" class="beizhu" id="username_notice" style="display:none"></label>
+                        <ul class="tip151020" id="auto1">
+
+                        </ul>
+
+                        <div id="prompt" class="error_ifo" style="display: none;">
+
+                        </div>
+
+
+                        <div class="_register_correct_inf correct" id="username_ok" style="display: none;"></div>
+                    </dd>
+                </dl>
+                <dl class="item">
+                    <dt>
+                        <span class="xing">*</span>设置密码
+                    </dt>
+                    <dd>
+                        <div class="logreg151016">
+                            <input type="text" value="6-20个大小写英文字母，符号或数字混合" class="bk-default jsszmm password">
+                            <input type="password" class="bk-default jsszmm pasw151016" name="password" id="password1">
+                        </div>
+
+                        <label for="" class="beizhu" style="display:none" id="password_notice"></label>
+
+                        <div class="ts-error _register_error_inf">
+
+                        </div>
+
+                        <div class="_register_correct_inf correct" id="password_ok" style="display: none;"></div>
+                    </dd>
+                </dl>
+                <dl class="item">
+                    <dt>
+                        <span class="xing">*</span>确认密码
+                    </dt>
+                    <dd>
+                        <div class="logreg151016">
+                            <input type="text" value="再次输入密码" class="bk-default jsqrmm confirm_pass">
+                            <input name="confirm_password" type="password" class="bk-default jsqrmm pasw151016">
+
+                        </div>
+                        <label for="" class="beizhu" style="display:none" id="conform_password_notice"></label>
+                        <div class="ts-error _register_error_inf">
+
+                        </div>
+                        <div class="_register_correct_inf correct" id="confirm_password_ok" style="display: none;"></div>
+                    </dd>
+                </dl>
+                <div class="ljzc yhxy">
+                    <input name="agreement" type="checkbox" value="1" checked="checked" class="checkbox" />
+                    <label for="protocol">
+                        我已阅读并同意
+                        <a target="_blank" href="http://www.baiji.com.cn/article.php?id=20418" id="protocol">
+                            《康德乐用户协议》
+                        </a>
+                    </label>
+
+                    <div class="ts-error _register_error_inf">
+                        <em></em>
+                    </div>
+                </div>
+                <div class="ljzc zhuce">
+                    <input name="Submit" type="submit" value="立即注册" class="btn-ljzc">
+                </div>
+                <script>
+                    var ljzc = document.querySelector('.btn-ljzc');
+                    ljzc.onclick = function (e) {
+                        e.preventDefault();
+                    }
+                </script>
+            </form>
+        </div>
+        <div class="reg_r">
+            <div class="pad45">
+                <h4>已有康德乐账号？</h4>
+                <a href="login.html">立即登录</a>
+                <h4>使用合作网站账号登录：</h4>
+                <p class="loginWay clearfix">
+                    <a href="#" class="qq"></a>
+                    <a href="#" class="weibo"></a>
+                    <a href="#" class="wechat"></a>
+                </p>
+            </div>
+            <div class="loginImg">
+                <img src="../images/goods/login_reg/registerad.jpg" alt="">
+            </div>
+        </div>
+    </main>
+
+    <aside id="z_aside">
+    </aside>
+
+    <footer id="pageFooter">
+    </footer>
+</body>
+
+</html>

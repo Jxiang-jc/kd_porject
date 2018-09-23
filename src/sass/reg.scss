@@ -1,0 +1,177 @@
+//引入变量文件
+@import 'var';
+
+.container{
+    width: 990px;
+    padding:0;
+    font:$fontFamily;
+}
+body{background: #fff !important;} 
+
+#pageHeader{
+    min-height: 90px;
+    background: #FFFFFF;
+    border:0;
+    .container{
+        height:95px;
+        .header_bl{
+            position:relative;
+            height:95px;
+            width: 280px;
+            text-indent:-1000px;
+            background:url('../images/indexImg/logo.jpg')no-repeat;
+            z-index:0;
+            img{
+                position:absolute;
+                top:70px;z-index:1;
+            }
+        }
+
+    }
+    .blank{
+        clear: both;
+        height: 8px;
+        line-height: 8px;
+        visibility: hidden;
+        width:100%;
+    }
+}
+
+#reg{
+    width: 990px;
+    border: 5px solid #f0f0f0;
+    background: #fff;
+    margin-bottom: 70px;
+    .reg_l{
+        width: 690px;
+        float: left;
+        min-height: 200px;
+        padding-top: 40px;
+        margin-left: 20px;
+        .regtitle{
+            height: 60px;
+            line-height: 30px;
+            font-size: 24px;
+            color: #333;
+            text-indent: 210px;
+            display: block;
+            font-weight: 400;
+            font-family: 'Microsoft yahei';
+            padding-bottom: 30px;
+        }
+        .item{
+            height:60px;
+            dt{
+                font:$fontFamily;
+                float: left;
+                height: 36px;
+                line-height: 36px;
+                padding-right: 20px;
+                font-size: 14px;
+                text-align: right;
+                width: 108px;
+                .xing{
+                    vertical-align: middle;
+                    padding-right: 8px;
+                    color: #ff0000;
+                }
+            }
+            dd{
+                float: left;
+                width: 540px;
+                position: relative;
+                .username,.password,.confirm_pass{
+                    width: 258px;
+                    height: 36px;
+                    line-height: 36px;
+                    border: 1px solid #e2e2e2;
+                    padding: 8px 0 8px 10px;
+                    color: rgb(153, 153, 153);
+                }
+                .beizhu{
+                    position: absolute;
+                    left: 280px;
+                    top: 8px;
+                }
+            }
+        }
+        .yhxy{
+            margin: 0 0 0 128px;
+            padding: 10px 0 20px;
+            line-height: 17px;
+            .checkbox{
+                margin-right: 5px;vertical-align: middle;
+                display:inline-block;
+            }
+            label{
+                vertical-align: middle;
+                margin:0;
+                a{color: #005aa0;}
+            }
+        }
+        .zhuce{
+            margin: 0 0 0 128px;
+            .btn-ljzc{
+                width: 270px;
+                border: none;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 20px;
+                color: #fff;
+                border-radius: 2px;
+                background: #f54343;
+                display: block;
+                position: relative;
+                z-index: 10;
+                font-family: 'Microsoft yahei';
+            }
+        }
+    }
+    .reg_r{
+        width: 265px;
+        border-left: 1px solid #e3e3e3;
+        height: 436px;
+        float: right;
+        .pad45{
+            padding: 0px 45px;
+            h4{
+                font-size: 14px;
+                height: 24px;font-weight:400;
+                line-height: 24px;
+                margin: 45px 0 8px 0;
+            }
+            >a{
+                background: #f5f5f5;
+                padding: 11px 0px;
+                border: 1px solid #e3e3e3;
+                display: block;
+                width: 176px;
+                text-align: center;
+                font-size: 14px;
+                margin-bottom: 30px;
+                &:hover{background: #eeeded;}
+            }
+            p a{
+                display:block;
+                width: 43px;
+                height: 43px;
+                margin-right: 10px;
+                float: left;
+                border-radius: 50%;
+                border: 1px solid #ebebeb;
+                background:url('../images/goods/goods_spirpt.png')no-repeat -380px -95px;
+                &:hover{border: 1px solid #f97e87;}
+                &:nth-child(2){background-position: -428px -95px;}
+                &:nth-child(3){
+                    background-position: -428px -143px;
+                    &:hover{border: 1px solid #3cb034;}
+                }
+            }
+        }
+        .loginImg{
+            padding-top:22px;
+            img{width:265px;}
+        }
+    }
+}
