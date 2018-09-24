@@ -13,7 +13,7 @@ require(['config'], function () {
         var $password1 = $('.password1');
         var $password2 = $('.password2');
         var one = false;
-        var two = false;
+        var two = false;    
         var three = false;
 
         $username.on('focus', function () {
