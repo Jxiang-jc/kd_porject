@@ -31,9 +31,11 @@ body { background: #fff !important; }
 
 #reg .reg_l .item dd { float: left; width: 540px; position: relative; }
 
-#reg .reg_l .item dd .username, #reg .reg_l .item dd .password, #reg .reg_l .item dd .confirm_pass { width: 258px; height: 36px; line-height: 36px; border: 1px solid #e2e2e2; padding: 8px 0 8px 10px; color: #999999; }
+#reg .reg_l .item dd .username, #reg .reg_l .item dd .password1, #reg .reg_l .item dd .password2 { width: 270px; height: 36px; line-height: 36px; border: 1px solid #e2e2e2; padding: 8px 0 8px 10px; color: #999999; }
 
 #reg .reg_l .item dd .beizhu { position: absolute; left: 280px; top: 8px; }
+
+#reg .reg_l .item dd .correct { display: block; width: 17px; height: 16px; position: absolute; left: 244px; top: 10px; background: url("../images/goods/goods_spirpt.png") no-repeat -484px -134px; }
 
 #reg .reg_l .yhxy { margin: 0 0 0 128px; padding: 10px 0 20px; line-height: 17px; }
 

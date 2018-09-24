@@ -80,8 +80,8 @@ body{background: #fff !important;}
                 float: left;
                 width: 540px;
                 position: relative;
-                .username,.password,.confirm_pass{
-                    width: 258px;
+                .username,.password1,.password2{
+                    width: 270px;
                     height: 36px;
                     line-height: 36px;
                     border: 1px solid #e2e2e2;
@@ -92,6 +92,15 @@ body{background: #fff !important;}
                     position: absolute;
                     left: 280px;
                     top: 8px;
+                }
+                .correct{
+                    display: block;
+                    width: 17px;
+                    height: 16px;
+                    position: absolute;
+                    left: 244px;
+                    top: 10px;
+                    background:url('../images/goods/goods_spirpt.png')no-repeat -484px -134px;
                 }
             }
         }

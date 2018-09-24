@@ -34,18 +34,34 @@
                         <span class="xing">*</span>账号
                     </dt>
                     <dd>
-                        <input type="text" class="bk-default username" name="username" id="username">
-                        <label for="" class="beizhu" id="username_notice" style="display:none"></label>
-                        <ul class="tip151020" id="auto1">
-
-                        </ul>
+                        <input type="text" class="bk-default username" name="username" id="username" value="邮箱 / 用户名 / 手机号">
+                        <label for="" class="beizhu" style="display:none" id="username_notice"></label>
 
                         <div id="prompt" class="error_ifo" style="display: none;">
-
                         </div>
 
+                        <div class="tip151020" id="auto1" style="display:none">
+                            推荐您使用:
+                            <dl>
+                                <dd class="rad">
+                                    <input type="radio" name="check">
+                                </dd>
+                                <dd class="tip1">
+                                </dd>
+                                <dd class="rad">
+                                    <input type="radio" name="check">
+                                </dd>
+                                <dd class="tip2">
+                                </dd>
+                                <dd class="rad">
+                                    <input type="radio" name="check">
+                                </dd> 
+                                <dd class="tip3">
+                                </dd>
+                            </dl>
+                        </div>
 
-                        <div class="_register_correct_inf correct" id="username_ok" style="display: none;"></div>
+                        <div class="_register_correct_inf correct" id="username_ok" style="display:none"></div>
                     </dd>
                 </dl>
                 <dl class="item">
@@ -54,8 +70,8 @@
                     </dt>
                     <dd>
                         <div class="logreg151016">
-                            <input type="text" value="6-20个大小写英文字母，符号或数字混合" class="bk-default jsszmm password">
-                            <input type="password" class="bk-default jsszmm pasw151016" name="password" id="password1">
+                            <input type="text" value="6-20个大小写英文字母，符号或数字混合" class="password1">
+                            
                         </div>
 
                         <label for="" class="beizhu" style="display:none" id="password_notice"></label>
@@ -73,9 +89,7 @@
                     </dt>
                     <dd>
                         <div class="logreg151016">
-                            <input type="text" value="再次输入密码" class="bk-default jsqrmm confirm_pass">
-                            <input name="confirm_password" type="password" class="bk-default jsqrmm pasw151016">
-
+                            <input type="text" value="再次输入密码" class=" password2">
                         </div>
                         <label for="" class="beizhu" style="display:none" id="conform_password_notice"></label>
                         <div class="ts-error _register_error_inf">
@@ -85,7 +99,7 @@
                     </dd>
                 </dl>
                 <div class="ljzc yhxy">
-                    <input name="agreement" type="checkbox" value="1" checked="checked" class="checkbox" />
+                    <input name="agreement" type="checkbox" value="1" checked="checked" class="checkbox" id="btnAgree"/>
                     <label for="protocol">
                         我已阅读并同意
                         <a target="_blank" href="http://www.baiji.com.cn/article.php?id=20418" id="protocol">
@@ -98,14 +112,14 @@
                     </div>
                 </div>
                 <div class="ljzc zhuce">
-                    <input name="Submit" type="submit" value="立即注册" class="btn-ljzc">
+                    <button value="立即注册" class="btn-ljzc">立即注册</button>
                 </div>
-                <script>
+                <!-- <script>
                     var ljzc = document.querySelector('.btn-ljzc');
                     ljzc.onclick = function (e) {
                         e.preventDefault();
                     }
-                </script>
+                </script> -->
             </form>
         </div>
         <div class="reg_r">
