@@ -23,7 +23,7 @@ html{height:100%;}
             .header_tl{
                 >a{
                     display:inline-block;
-                    margin-right:10px;
+                    margin-right:10px;  
                     color:$hoverColor;
 
                     &:nth-child(1){
@@ -33,6 +33,9 @@ html{height:100%;}
                         text-decoration:none;
                         color:$hoverColor;
                     }
+                }
+                .tuichu{
+                    display:none;
                 }
             }
             .header_tr{

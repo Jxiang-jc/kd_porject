@@ -19,6 +19,8 @@ html { height: 100%; }
 
 #pageHeader .container .header_t .header_tl > a:hover { text-decoration: none; color: #f03b43; }
 
+#pageHeader .container .header_t .header_tl .tuichu { display: none; }
+
 #pageHeader .container .header_t .header_tr li { float: left; margin-right: 10px; }
 
 #pageHeader .container .header_t .header_tr li:last-child span { border-right: 0; }

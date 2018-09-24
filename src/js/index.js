@@ -1,7 +1,7 @@
 //引入模块化文件
 require(['config'], function () {
     // console.log(66)
-    require(['jquery','common','jxcarousel','bootstrapjs'], function ($) {
+    require(['jquery', 'common', 'jxcarousel', 'bootstrapjs'], function ($) {
         //头部二级导航
         $('.mykdl').hover(() => {
             $('.mykdl ul').removeClass('hide').addClass('shows')
@@ -28,34 +28,34 @@ require(['config'], function () {
             //初始化
             init() {
                 this.ele = $(this.ele);
-                let $h3 = this.ele.find('h3'); 
-                
+                let $h3 = this.ele.find('h3');
+
                 $h3.on('click', function () {
-                    if($('.more').is(':visible')){
+                    if ($('.more').is(':visible')) {
                         $('.up').hide();
-                        $('.more').slideUp(500,function(){
+                        $('.more').slideUp(500, function () {
                             $('.down').show();
                         })
-                    }else{
+                    } else {
                         $('.down').hide();
-                        $('.more').slideDown(500,function(){  
+                        $('.more').slideDown(500, function () {
                             $('.up').show();
-                        }); 
+                        });
                     }
                 })
 
-                $('.up').on('click',()=>{
+                $('.up').on('click', () => {
                     console.log(666)
-                    let timer = setInterval(()=>{
+                    let timer = setInterval(() => {
                         //计算缓冲速度
-                        let speed = Math.ceil(window.scrollY/10);
+                        let speed = Math.ceil(window.scrollY / 10);
 
-                        scrollBy(0,-speed);
+                        scrollBy(0, -speed);
 
-                        if(window.scrollY === 0){
+                        if (window.scrollY === 0) {
                             clearInterval(timer);
                         }
-                    },30)
+                    }, 30)
                 })
             }
         }
@@ -63,30 +63,30 @@ require(['config'], function () {
 
         //轮播图使用
         $('.carousel').jxcarousel({
-            ele:'.banner_l',
-            width:670,
-            height:450,
-            num:false,
-            index:0,
-            page:true,
-            imgs:["../images/indexImg/banner/banner(1).jpg","../images/indexImg/banner/banner(2).jpg","../images/indexImg/banner/banner(3).jpg","../images/indexImg/banner/banner(4).jpg","../images/indexImg/banner/banner(5).jpg","../images/indexImg/banner/banner(6).jpg"],
-            duration:4000
+            ele: '.banner_l',
+            width: 670,
+            height: 450,
+            num: false,
+            index: 0,
+            page: true,
+            imgs: ["../images/indexImg/banner/banner(1).jpg", "../images/indexImg/banner/banner(2).jpg", "../images/indexImg/banner/banner(3).jpg", "../images/indexImg/banner/banner(4).jpg", "../images/indexImg/banner/banner(5).jpg", "../images/indexImg/banner/banner(6).jpg"],
+            duration: 4000
         })
 
         //请求数据生成列表
-        function limitbuy(){
+        function limitbuy() {
             $.ajax({
-                type:'get',
-                url:'../api/limitBuy.php',
-                data:{
-                    param:'tejia',
+                type: 'get',
+                url: '../api/limitBuy.php',
+                data: {
+                    param: 'tejia',
                 },
-                success:function(data){
+                success: function (data) {
                     var res = JSON.parse(data);
                     // console.log(res)
                     $('.imgbox').html(
-                        res.map(function(item){
-                            return  `<li>
+                        res.map(function (item) {
+                            return `<li>
                                 <a href="#"><img src="${item.imgurl}" width="140" ,height="140"></a>
                                 <p>${item.name}</p>
                                 <p>￥${item.price}</p>
@@ -96,26 +96,26 @@ require(['config'], function () {
 
                 }
             })
-        }        
-        
+        }
+
         //限时轮播图
-        function banner(){
-            $.get("../api/limitBuy.php", {'del':1},
-                function(data){
+        function banner() {
+            $.get("../api/limitBuy.php", { 'del': 1 },
+                function (data) {
                     var res = JSON.parse(data);
                     // console.log(res)
 
                     //限时轮播
                     $('.limitBox').jxcarousel({
-                        ele:'.limitBox',
-                        width:308,
-                        height:251,
-                        num:false,
-                        index:0,
-                        page:true,
-                        duration:3000,
-                        button:false,
-                        imgbox:res
+                        ele: '.limitBox',
+                        width: 308,
+                        height: 251,
+                        num: false,
+                        index: 0,
+                        page: true,
+                        duration: 3000,
+                        button: false,
+                        imgbox: res
                     })
                 }
             )
@@ -126,47 +126,47 @@ require(['config'], function () {
         limitbuy();
 
         //一级tab切换
-        $('.activeTab').on('mouseover','li',function(){
+        $('.activeTab').on('mouseover', 'li', function () {
 
             //当前高亮
-            $(this).css({'background':'#f54343','color':'#fff'}).siblings().css({'background':'#f9f9f9','color':'#000'});
+            $(this).css({ 'background': '#f54343', 'color': '#fff' }).siblings().css({ 'background': '#f9f9f9', 'color': '#000' });
 
             //改变li时,secTab也要跟着改变
             //先隐藏所有的div
-            $(this).closest('.activeTab').next().find('.secTab2').css('display','none');
+            $(this).closest('.activeTab').next().find('.secTab2').css('display', 'none');
 
             //当前li的父母的下一个兄弟的后代.通过鼠标移动时获取当前li的索引值来找出是哪个后代,在获取后代的div
-            $(this).closest('.activeTab').next().find('.secTab').eq($(this).index()).children().eq(0).css('display','block');
-                    
+            $(this).closest('.activeTab').next().find('.secTab').eq($(this).index()).children().eq(0).css('display', 'block');
+
 
             //声明一个变量用于传参
             let content = 'tejia';
 
-            if($(this).hasClass('tjTab')){
+            if ($(this).hasClass('tjTab')) {
                 content = 'tejia'
             }
-            else if($(this).hasClass('rmTab')){
+            else if ($(this).hasClass('rmTab')) {
                 content = 'hotSale';
             }
-            else if($(this).hasClass('rpTab')){
+            else if ($(this).hasClass('rpTab')) {
                 content = 'evaluate';
             }
-            else if($(this).hasClass('xpTab')){
+            else if ($(this).hasClass('xpTab')) {
                 content = 'newGoods';
             }
 
             $.ajax({
-                type:'get',
-                url:'../api/limitBuy.php',
-                data:{
-                    param:content,
+                type: 'get',
+                url: '../api/limitBuy.php',
+                data: {
+                    param: content,
                 },
-                success:function(data){
+                success: function (data) {
                     var res = JSON.parse(data);
-                    
+
                     $('.imgbox').html(
-                        res.map(function(item){
-                            return  `<li>
+                        res.map(function (item) {
+                            return `<li>
                                 <a href="#"><img src="${item.imgurl}" width="140" ,height="140"></a>
                                 <p>${item.name}</p>
                                 <p>￥${item.price}</p>
@@ -178,24 +178,24 @@ require(['config'], function () {
         })
 
         //二级tab切换
-        $('.secTab').on('mouseover','li',function(e){
+        $('.secTab').on('mouseover', 'li', function (e) {
             //当前高亮
-            $(this).css({'background':'#f54343','color':'#fff'}).siblings().css({'background':'#f9f9f9','color':'#000'});
+            $(this).css({ 'background': '#f54343', 'color': '#fff' }).siblings().css({ 'background': '#f9f9f9', 'color': '#000' });
 
             let content = 'secTab';
 
             $.ajax({
-                type:'get',
-                url:'../api/limitBuy.php',
-                data:{
-                    param:content,
+                type: 'get',
+                url: '../api/limitBuy.php',
+                data: {
+                    param: content,
                 },
-                success:function(data){
+                success: function (data) {
                     var res = JSON.parse(data);
-                    
+
                     $('.imgbox').html(
-                        res.map(function(item){
-                            return  `<li>
+                        res.map(function (item) {
+                            return `<li>
                                 <a href="#"><img src="${item.imgurl}" width="140" ,height="140"></a>
                                 <p>${item.name}</p>
                                 <p>￥${item.price}</p>
@@ -210,26 +210,57 @@ require(['config'], function () {
         $('#myTab a').mouseover(function (e) {
             e.preventDefault()
             $(this).tab('show')
-            
-            $(this).css('color','red').parent().siblings().children().css('color','#666');
-          })
-        
+
+            $(this).css('color', 'red').parent().siblings().children().css('color', '#666');
+        })
+
         //点击回到顶部
-        $('.toTop').on('click',(e)=>{
+        $('.toTop').on('click', (e) => {
             console.log(666)
             e.preventDefault();
-            let timer = setInterval(()=>{
+            let timer = setInterval(() => {
                 //计算缓冲速度
-                let speed = Math.ceil(window.scrollY/10);
+                let speed = Math.ceil(window.scrollY / 10);
 
-                scrollBy(0,-speed);
+                scrollBy(0, -speed);
 
-                if(window.scrollY === 0){
+                if (window.scrollY === 0) {
                     clearInterval(timer);
                 }
-            },30)
+            }, 30)
+        })
+
+        //获取用户名
+        var cookie = document.cookie.split('; ');
+        console.log(cookie);
+
+        //用来存用户名信息
+        var user;
+
+        cookie.forEach(function (item) {
+            // 拆分name/value
+            var arr = item.split('=');
+            console.log(arr)
+            // 找到top,left，应用样式
+            if (arr[0] === 'username') {
+                user = JSON.parse(arr[1])
+                $('.cookieUser').html(user);
+                $('.reg_z').hide();
+                $('.login_z').hide();
+                $('.tuichu').show();
+            }
+        })
+
+        $('.tuichu').on('click', function () {
+            var now = new Date();
+            now.setDate(now.getDate() - 1);
+            document.cookie = 'username=' + JSON.stringify('') + ';expires=' + now + ';path=/';
+            $('.tuichu').hide();
+            $('.reg_z').show();
+            $('.login_z').show();
+            $('.cookieUser').html('');
         })
 
     })
-}); 
+});
 

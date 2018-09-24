@@ -15,7 +15,9 @@ body { background: #fff !important; }
 
 #pageHeader .container .header_bl { position: relative; height: 95px; width: 280px; text-indent: -1000px; background: url("../images/indexImg/logo.jpg") no-repeat; z-index: 0; }
 
-#pageHeader .container .header_bl img { position: absolute; top: 70px; z-index: 1; }
+#pageHeader .container .header_bl h1 { height: 90px; width: 330px; }
+
+#pageHeader .container .header_bl img { position: absolute; top: 70px; z-index: 1; width: 330px; }
 
 #pageHeader .blank { clear: both; height: 8px; line-height: 8px; visibility: hidden; width: 100%; }
 

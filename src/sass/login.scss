@@ -21,9 +21,11 @@ body{background: #fff !important;}
             text-indent:-1000px;
             background:url('../images/indexImg/logo.jpg')no-repeat;
             z-index:0;
+            h1{height:90px;width:330px;}
             img{
                 position:absolute;
                 top:70px;z-index:1;
+                width:330px;
             }
         }
 

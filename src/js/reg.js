@@ -107,7 +107,7 @@ require(['config'], function () {
                 return false;
 
             } else if (!/^1[3-9]\d{9}$/.test(_username) && !/^[a-z0-9][\w\-\.]{2,29}@[a-z0-9\-]{2,67}(\.[a-z\u2E80-\u9FFF]{2,6})+$/.test(_username) && !/^[\w\.\@\-\u2E80-\u9FFF]{3,20}$/.test(_username)) {
-                $('.beizhu').html('手机号码或邮箱地址有误');
+                $('#username_notice').html('手机号码或邮箱地址有误');
                 $('#username_notice').css('display', 'block');
                 $('#username_ok').css('display', 'none');
                 return false;
@@ -144,7 +144,7 @@ require(['config'], function () {
 
             } else if (_password1.length < 6) {
 
-                $('.beizhu').html('密码的长度应该为6～20个字符之间');
+                $('#username_notice').html('密码的长度应该为6～20个字符之间');
 
                 $psd_n.css('display', 'block');
 
@@ -238,7 +238,12 @@ require(['config'], function () {
                     success: function (xhr) {
                         console.log(xhr)
                         if(xhr == 'success'){
-                            location.href="../index.html"
+                            
+                            var now = new Date();
+                            now.setDate(now.getDate()+1);
+                            document.cookie = 'username=' + JSON.stringify(_username) + ';expires=' + now +';path=/';
+
+                            location.href="../index.html";
                         }
                     }
                 })
