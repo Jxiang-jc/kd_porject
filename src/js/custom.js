@@ -1,5 +1,5 @@
 
-(function($){
+(function ($) {
     $.prototype.indexs = function () {
         //头部二级导航
         $('.mykdl').hover(() => {

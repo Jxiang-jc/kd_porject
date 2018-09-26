@@ -15,7 +15,7 @@ require(['config'], function () {
 
 
 
-        let goods = {
+        var goods = {
             title: 'h1',
             price: '.goods_price',
             name: '.goods_name',
